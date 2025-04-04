@@ -10,7 +10,7 @@ export function About() {
     useEffect(() => {
         // Set visible after mount for animations
         setIsVisible(true);
-    }, []);
+    }, []); //deneme
 
     const scrollToProjects = () => {
         const element = document.getElementById("projects");
