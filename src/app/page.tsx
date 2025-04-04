@@ -10,7 +10,7 @@ import { useLanguage} from "@/app/components/LanguageProvider";
 export default function Home() {
     const { translations } = useLanguage();
     const [showScrollTop, setShowScrollTop] = useState(false);
-
+//deneme
     useEffect(() => {
         const handleScroll = () => {
             // Show button when scrolled down 300px
