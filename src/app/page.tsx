@@ -35,7 +35,7 @@ export default function Home() {
             <Projects />
             <Contact />
 
-            {/* Scroll to top button */}
+            {/* Scroll to top buttons */}
             {showScrollTop && (
                 <button
                     onClick={scrollToTop}
