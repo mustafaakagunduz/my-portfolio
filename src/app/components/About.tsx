@@ -61,12 +61,7 @@ export function About() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        <div
-                            className="inline-block px-3 py-1 mb-4 rounded-full text-primary"
-                            style={{ background: "var(--primary-foreground)", border: "1px solid var(--primary)" }}
-                        >
-                            {translations["hero.greeting"]}
-                        </div>
+
                         <h1
                             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
                             style={{ color: "var(--foreground)" }}
