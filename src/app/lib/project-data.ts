@@ -14,6 +14,21 @@ export const projects: Project[] = [
     {
         id: "project-1",
         title: {
+            en: "Algorithm Question Tracker",
+            tr: "Algoritma Soru Takipçisi ",
+        },
+        description: {
+            en: "A web application that helps users repeat previously solved algorithm questions at intervals according to the difficulty levels they determine.",
+            tr: "Kullanıcıların daha önce çözdükleri algoritma sorularını, kendi belirledikleri zorluk seviyelerine göre aralıklı tekrar etmelerine yardımcı olan web uygulaması."
+        },
+        technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        imageUrl: "/question.png",
+        demoUrl: "https://question-tracker-seven.vercel.app",
+        githubUrl: "https://github.com/mustafaakagunduz/question-tracker"
+    },
+    {
+        id: "project-2",
+        title: {
             en: "My Kanban",
             tr: "Kanbanım",
         },
@@ -27,7 +42,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/personal-kanban-board"
     },
     {
-        id: "project-2",
+        id: "project-3",
         title: {
             en: "Sorry, but..",
             tr: "Üzgünüz, fakat..",
@@ -42,7 +57,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/match-app-react"
     },
     {
-        id: "project-3",
+        id: "project-4",
         title: {
             en: "Weather Wear",
             tr: "Weather Wear",
@@ -57,7 +72,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/weather-wear"
     },
     {
-        id: "project-4",
+        id: "project-5",
         title: {
             en: "Shopsmart",
             tr: "Shopsmart",
@@ -72,7 +87,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/e-commerce-website-react"
     },
     {
-        id: "project-5",
+        id: "project-6",
         title: {
             en: "Spring Concepts",
             tr: "Spring Concepts",
