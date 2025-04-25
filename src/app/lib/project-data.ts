@@ -14,6 +14,20 @@ export const projects: Project[] = [
     {
         id: "project-1",
         title: {
+            en: "HRSAM (Human Resources Skill Assesment Model)",
+            tr: "HRSAM (İnsan Kaynakları Yetenek Değerlendirme Modeli) ",
+        },
+        description: {
+            en: "HRSAM is an innovative AI-powered web platform designed to help individuals and companies adapt to today's rapidly changing workforce market.",
+            tr: "HRSAM, bireylerin ve şirketlerin günümüzün hızla değişen iş gücü piyasasına uyum sağlamalarına yardımcı olmak için tasarlanmış, yapay zeka destekli yenilikçi bir web platformdur."
+        },
+        technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API"],
+        imageUrl: "/hrsam.png",
+        demoUrl: "https://www.hrsam.org/",
+        githubUrl: "https://github.com/mustafaakagunduz/BBM479-BE"
+    },{
+        id: "project-2",
+        title: {
             en: "Algorithm Question Tracker",
             tr: "Algoritma Soru Takipçisi ",
         },
@@ -27,7 +41,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/question-tracker"
     },
     {
-        id: "project-2",
+        id: "project-3",
         title: {
             en: "My Kanban",
             tr: "Kanbanım",
@@ -42,7 +56,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/personal-kanban-board"
     },
     {
-        id: "project-3",
+        id: "project-4",
         title: {
             en: "Sorry, but..",
             tr: "Üzgünüz, fakat..",
@@ -57,7 +71,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/match-app-react"
     },
     {
-        id: "project-4",
+        id: "project-5",
         title: {
             en: "Weather Wear",
             tr: "Weather Wear",
@@ -72,7 +86,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/weather-wear"
     },
     {
-        id: "project-5",
+        id: "project-6",
         title: {
             en: "Shopsmart",
             tr: "Shopsmart",
@@ -87,7 +101,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/e-commerce-website-react"
     },
     {
-        id: "project-6",
+        id: "project-7",
         title: {
             en: "Spring Concepts",
             tr: "Spring Concepts",
