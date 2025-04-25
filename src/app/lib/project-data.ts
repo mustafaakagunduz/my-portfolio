@@ -14,12 +14,12 @@ export const projects: Project[] = [
     {
         id: "project-1",
         title: {
-            en: "HRSAM (Human Resources Skill Assesment Model)",
-            tr: "HRSAM (İnsan Kaynakları Yetenek Değerlendirme Modeli) ",
+            en: "SkillFit",
+            tr: "SkillFit",
         },
         description: {
-            en: "HRSAM is an innovative AI-powered web platform designed to help individuals and companies adapt to today's rapidly changing workforce market.",
-            tr: "HRSAM, bireylerin ve şirketlerin günümüzün hızla değişen iş gücü piyasasına uyum sağlamalarına yardımcı olmak için tasarlanmış, yapay zeka destekli yenilikçi bir web platformdur."
+            en: "SkillFit is an innovative AI-powered web platform designed to help individuals and companies adapt to today's rapidly changing workforce market.",
+            tr: "SkillFit, bireylerin ve şirketlerin günümüzün hızla değişen iş gücü piyasasına uyum sağlamalarına yardımcı olmak için tasarlanmış, yapay zeka destekli yenilikçi bir web platformdur."
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API"],
         imageUrl: "/hrsam.png",
