@@ -8,17 +8,32 @@ import { useLanguage} from "@/app/components/LanguageProvider";
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const [prevScrollY, setPrevScrollY] = useState(0);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const { language, translations } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
+            const currentScrollY = window.scrollY;
+
+            // Check if scrolled from the top
+            setIsScrolled(currentScrollY > 10);
+
+            // Hide when scrolling down, show when scrolling up
+            if (currentScrollY > prevScrollY) {
+                setIsHidden(true);
+            } else {
+                setIsHidden(false);
+            }
+
+            setPrevScrollY(currentScrollY);
         };
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [prevScrollY]);
 
     const navItems = [
         { name: translations["nav.about"], href: "#about", isDropdown: false },
@@ -58,8 +73,12 @@ export function Navbar() {
         <nav
             className={`fixed w-full z-30 transition-all duration-300 ${
                 isScrolled
-                    ? "bg-background/80 backdrop-blur-md py-2 shadow-sm"
-                    : "bg-transparent py-4"
+                    ? isHidden
+                        ? "bg-background/0 -translate-y-full"
+                        : "bg-background/50 backdrop-blur-md shadow-sm" // Lighter background when shown after scrolling
+                    : "bg-background/80 backdrop-blur-md" // Original background at the top
+            } ${isHidden ? "-translate-y-full" : "translate-y-0"} ${
+                isScrolled ? "py-2" : "py-4"
             }`}
         >
             <div className="container mx-auto px-4 md:px-6">
