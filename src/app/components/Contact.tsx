@@ -268,11 +268,7 @@ export function Contact() {
                 </div>
 
                 {/* Footer section */}
-                <div className="mt-20 text-center">
-                    <p className="text-sm text-foreground/60">
-                        {translations["contact.footer"] || "© 2025. All rights reserved."}
-                    </p>
-                </div>
+
             </div>
         </section>
     );

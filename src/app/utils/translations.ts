@@ -30,6 +30,7 @@ export const translations = {
         "contact.github": "GitHub:",
         "contact.linkedin": "LinkedIn:",
         "contact.phone": "Phone:",
+        "contact.subtitle" : "Feel free to reach out to me through any of these channels",
 
         "footer.rights": "All rights reserved."
     },
@@ -64,6 +65,7 @@ export const translations = {
         "contact.github": "GitHub:",
         "contact.linkedin": "LinkedIn:",
         "contact.phone": "Telefon:",
+        "contact.subtitle" : "Bu kanallardan herhangi biri aracılığıyla bana ulaşabilirsiniz",
 
         "footer.rights": "Tüm hakları saklıdır."
     }
