@@ -331,34 +331,7 @@ export function About() {
                         </div>
 
                         <div className="flex flex-wrap gap-4 mt-6">
-                            <a
-                                href="/resume.pdf"
-                                download
-                                className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
-                                style={{
-                                    background: "var(--accent)",
-                                    color: "var(--accent-foreground)",
-                                    borderColor: "var(--primary)",
-                                    boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
-                                }}
-                            >
-                                <span className="absolute inset-0 w-full h-full bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-                                    />
-                                </svg>
-                                <span className="relative">{translations["about.downloadCV"] || "Download CV"}</span>
-                            </a>
+
                             <a
                                 href="https://cv-uwdm.vercel.app"
                                 target="_blank"
@@ -392,6 +365,34 @@ export function About() {
                                     />
                                 </svg>
                                 <span className="relative">{translations["about.viewCV"] || "View CV"}</span>
+                            </a>
+                            <a
+                                href="/resume.pdf"
+                                download
+                                className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
+                                style={{
+                                    background: "var(--accent)",
+                                    color: "var(--accent-foreground)",
+                                    borderColor: "var(--primary)",
+                                    boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
+                                }}
+                            >
+                                <span className="absolute inset-0 w-full h-full bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                                    />
+                                </svg>
+                                <span className="relative">{translations["about.downloadCV"] || "Download CV"}</span>
                             </a>
                         </div>
                     </div>
