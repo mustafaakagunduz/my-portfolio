@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider} from "@/app/components/ThemeProvider";
 import { LanguageProvider} from "@/app/components/LanguageProvider";
-
-const inter = Inter({ subsets: ["latin"] });
+import { nunito} from "@/app/fonts/fonts";
 
 export const metadata: Metadata = {
     title: "Mustafa Akagündüz | Portfolio",
@@ -17,8 +15,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+        <html lang="en" suppressHydrationWarning className={nunito.variable}>
+        <body className={`font-nunito ${nunito.className}`}>
         <ThemeProvider>
             <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>

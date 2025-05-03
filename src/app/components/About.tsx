@@ -10,7 +10,32 @@ export function About() {
     useEffect(() => {
         // Set visible after mount for animations
         setIsVisible(true);
-    }, []); //deneme
+
+        // Add keyframes animation to head
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes profilePulse {
+                0% {
+                    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+                }
+                50% {
+                    box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.7);
+                }
+                100% {
+                    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+                }
+            }
+            .profile-glow {
+                animation: profilePulse 3s infinite;
+            }
+        `;
+        document.head.appendChild(style);
+
+        return () => {
+            // Clean up
+            document.head.removeChild(style);
+        };
+    }, []);
 
     const scrollToProjects = () => {
         const element = document.getElementById("projects");
@@ -154,9 +179,10 @@ export function About() {
                                 download
                                 className="inline-flex items-center hover:scale-105 border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer"
                                 style={{
-                                    background: "var(--background)",
-                                    color: "var(--foreground)",
-                                    borderColor: "var(--input)"
+                                    background: "var(--accent)",
+                                    color: "var(--accent-foreground)",
+                                    borderColor: "var(--primary)",
+                                    boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
                                 }}
                             >
                                 <svg
@@ -181,9 +207,10 @@ export function About() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center hover:scale-105 border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer"
                                 style={{
-                                    background: "var(--background)",
+                                    background: "var(--muted)",
                                     color: "var(--foreground)",
-                                    borderColor: "var(--input)"
+                                    borderColor: "var(--primary)",
+                                    boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
                                 }}
                             >
                                 <svg
@@ -212,18 +239,24 @@ export function About() {
 
                     <div className={`flex justify-center items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                         <div
-                            className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden"
-                            style={{
-                                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                                border: "4px solid var(--primary)",
-                                transform: "rotate(5deg)"
-                            }}
+                            className="relative w-72 h-72 md:w-96 md:h-96 overflow-hidden rounded-full"
                         >
-                            <img
-                                src="/pp.jpeg"
-                                alt="Profile"
-                                className="w-full h-full object-cover"
-                            />
+                            {/* Image wrapper with glowing effect */}
+                            <div
+                                className="absolute inset-0 rounded-full overflow-hidden profile-glow"
+                                style={{
+                                    boxShadow: "0 0 25px 5px rgba(255, 255, 255, 0.6)"
+                                }}
+                            >
+                                <img
+                                    src="/pp.jpeg"
+                                    alt="Profile"
+                                    className="w-full h-full object-cover"
+                                    style={{
+                                        transform: "rotate(5deg)",
+                                    }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
