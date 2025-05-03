@@ -23,6 +23,7 @@ export const translations = {
         "projects.view": "View Project",
         "projects.github": "GitHub",
         "projects.technologies": "Technologies:",
+        "projects.subtitle": "Check out some of my recent work",
 
         "contact.title": "Get In Touch",
         "contact.email": "Email:",
@@ -56,6 +57,7 @@ export const translations = {
         "projects.view": "Projeyi Görüntüle",
         "projects.github": "GitHub",
         "projects.technologies": "Teknolojiler:",
+        "projects.subtitle": "Son çalışmalarımdan bazılarını inceleyin",
 
         "contact.title": "İletişime Geçin",
         "contact.email": "E-posta:",

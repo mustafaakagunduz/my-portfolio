@@ -160,7 +160,7 @@ export function Projects() {
                          style={{ background: "linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%)" }}>
                     </div>
                     <p className="text-lg text-foreground/70">
-                        {translations["projects.subtitle"] || "Check out some of my recent work"}
+                        {translations["projects.subtitle"]}
                     </p>
                 </div>
 
