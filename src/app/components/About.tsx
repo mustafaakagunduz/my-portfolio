@@ -439,7 +439,7 @@ export function About() {
                                     alt="Profile"
                                     className="w-full h-full object-cover"
                                     style={{
-                                        transform: "rotate(5deg) scale(1.05)", // Slightly larger to fill the circle better
+                                        transform: "rotate(5deg) scale(1.05)", // dsfdsSlightly larger to fill the circle better
                                         transition: "transform 0.5s ease-in-out",
                                     }}
                                 />
