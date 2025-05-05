@@ -183,7 +183,7 @@ export function About() {
         <section
             id="about"
             data-section
-            className="min-h-screen py-20 md:py-0 flex flex-col justify-center relative overflow-hidden"
+            className="min-h-screen pt-32 pb-20 md:pt-32 md:pb-0 flex flex-col justify-center relative overflow-hidden"
             style={{
                 background: "linear-gradient(135deg, var(--background) 0%, var(--card) 100%)",
             }}
