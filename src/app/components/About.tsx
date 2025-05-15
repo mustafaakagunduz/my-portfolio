@@ -435,7 +435,7 @@ export function About() {
                                 <div className="absolute inset-0 bg-primary opacity-10 mix-blend-overlay z-10"></div>
 
                                 <img
-                                    src="/pp.jpeg"
+                                    src="/pp.webp"
                                     alt="Profile"
                                     className="w-full h-full object-cover"
                                     style={{

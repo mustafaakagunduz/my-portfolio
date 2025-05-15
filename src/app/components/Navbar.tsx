@@ -21,10 +21,15 @@ export function Navbar() {
             // Check if scrolled from the top
             setIsScrolled(currentScrollY > 10);
 
-            // Hide when scrolling down, show when scrolling up
-            if (currentScrollY > prevScrollY) {
+            // Hide/show logic with fix for top position
+            if (currentScrollY <= 50) {
+                // En üstteyken (0-50px) her zaman göster
+                setIsHidden(false);
+            } else if (currentScrollY > prevScrollY && currentScrollY > 100) {
+                // Aşağı scroll yapılıyor ve 100px'den fazla - gizle
                 setIsHidden(true);
-            } else {
+            } else if (currentScrollY < prevScrollY) {
+                // Yukarı scroll yapılıyor - göster
                 setIsHidden(false);
             }
 
@@ -55,7 +60,7 @@ export function Navbar() {
         const element = document.getElementById(sectionId.replace("#", ""));
         if (element) {
             // Add an offset (e.g., 100px) to scroll a bit higher than the exact element position
-            const yOffset = -100; // Adjust this value as needed
+            const yOffset = -100;
             const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({top: y, behavior: 'smooth'});
         }
@@ -74,10 +79,10 @@ export function Navbar() {
             className={`fixed w-full z-30 transition-all duration-300 ${
                 isScrolled
                     ? isHidden
-                        ? "bg-background/0 -translate-y-full"
-                        : "bg-background/50 backdrop-blur-md shadow-sm" // Lighter background when shown after scrolling
-                    : "bg-background/80 backdrop-blur-md" // Original background at the top
-            } ${isHidden ? "-translate-y-full" : "translate-y-0"} ${
+                        ? "bg-background/50 backdrop-blur-md shadow-sm -translate-y-full"
+                        : "bg-background/50 backdrop-blur-md shadow-sm translate-y-0"
+                    : "bg-background/80 backdrop-blur-md translate-y-0"
+            } ${
                 isScrolled ? "py-2" : "py-4"
             }`}
         >
