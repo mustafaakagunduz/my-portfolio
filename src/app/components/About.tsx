@@ -165,18 +165,29 @@ export function About() {
     ];
 
     const skills: SkillItem[] = [
+        { name: "Spring Boot", color: "#6DB33F" },
+        { name: "Supabase", color: "#099b5e" },
+        { name: "Java", color: "#007396" },
         { name: "Next.js", color: "#7928CA" },
         { name: "React", color: "#61DAFB" },
         { name: "TypeScript", color: "#3178C6" },
         { name: "Tailwind CSS", color: "#06B6D4" },
-        { name: "Spring Boot", color: "#6DB33F" },
         { name: "PostgreSQL", color: "#336791" },
+        { name: "OpenAI API", color: "#3bbfae" },
         { name: "Github", color: "#cccccc" },
-        { name: "Java", color: "#007396" },
-        { name: "Python", color: "#3776AB" },
         { name: "HTML", color: "#E34F26" },
         { name: "CSS", color: "#1572B6" },
-        { name: "Javascript", color: "#F7DF1E" }
+        { name: "JavaScript", color: "#F7DF1E" },
+        { name: "Docker", color: "#2496ED" },
+        { name: "Firebase", color: "#FFCA28" },
+        { name: "Python", color: "#3776AB" },
+        { name: "REST API", color: "#FF5733" },
+        { name: "AWS", color: "#FF9900" },
+        { name: "Vercel", color: "#948f8a" }
+
+
+
+
     ];
 
     return (
