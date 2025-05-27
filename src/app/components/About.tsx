@@ -324,10 +324,11 @@ export function About() {
                             </button>
                             <button
                                 onClick={scrollToContact}
-                                className="group relative overflow-hidden px-7 py-3.5 rounded-md font-medium transition-all duration-300 cursor-pointer"
+                                className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
                                 style={{
-                                    background: "var(--secondary)",
-                                    color: "var(--secondary-foreground)",
+                                    background: "var(--accent)",
+                                    color: "var(--accent-foreground)",
+                                    borderColor: "var(--primary)",
                                     boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
                                 }}
                             >
