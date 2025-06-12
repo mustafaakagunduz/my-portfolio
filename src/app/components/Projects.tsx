@@ -125,7 +125,9 @@ export function Projects() {
             "Tailwind CSS": "#06B6D4",
             "TypeScript": "#3178C6",
             "Vue.js": "#4FC08D",
-            "Vercel" : "#948f8a"
+            "Vercel" : "#948f8a",
+            "Brevo" : "#40d248" ,
+            "Resend" : "#ffffff"
         };
 
         return techColors[tech] || "#6E6E6E"; // Default color if not found

@@ -183,7 +183,9 @@ export function About() {
         { name: "Python", color: "#3776AB" },
         { name: "REST API", color: "#FF5733" },
         { name: "AWS", color: "#FF9900" },
-        { name: "Vercel", color: "#948f8a" }
+        { name: "Vercel", color: "#948f8a" },
+        { name: "Brevo", color: "#40d248" },
+        { name: "Resend", color: "#ffffff" }
 
 
 

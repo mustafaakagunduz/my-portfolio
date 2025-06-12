@@ -14,6 +14,20 @@ export const projects: Project[] = [
     {
         id: "project-1",
         title: {
+            en: "DGD Global Website",
+            tr: "DGD Global Web Sitesi",
+        },
+        description: {
+            en: "The website of DGD Global, a company operating in the field of green technology.",
+            tr: "Yeşil teknoloji alanında faaliyet göstermekte olan DGD Global şirketinin web sayfası"
+        },
+        technologies: ["Supabase", "Next.js", "React", "TypeScript", "Tailwind CSS", "Resend", "Brevo", "Vercel"],
+        imageUrl: "/dgd.png",
+        demoUrl: "https://dgd-taupe.vercel.app",
+
+    },{
+        id: "project-2",
+        title: {
             en: "SkillFit",
             tr: "SkillFit",
         },
@@ -26,7 +40,7 @@ export const projects: Project[] = [
         demoUrl: "https://www.hrsam.org/",
         githubUrl: "https://github.com/mustafaakagunduz/BBM479-BE"
     },{
-        id: "project-2",
+        id: "project-3",
         title: {
             en: "Algorithm Question Tracker",
             tr: "Algoritma Soru Takipçisi ",
@@ -41,7 +55,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/question-tracker"
     },
     {
-        id: "project-3",
+        id: "project-4",
         title: {
             en: "My Kanban",
             tr: "Kanbanım",
@@ -56,7 +70,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/personal-kanban-board"
     },
     {
-        id: "project-4",
+        id: "project-5",
         title: {
             en: "Sorry, but..",
             tr: "Üzgünüz, fakat..",
@@ -71,7 +85,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/match-app-react"
     },
     {
-        id: "project-5",
+        id: "project-6",
         title: {
             en: "Weather Wear",
             tr: "Weather Wear",
@@ -86,7 +100,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/weather-wear"
     },
     {
-        id: "project-6",
+        id: "project-7",
         title: {
             en: "Shopsmart",
             tr: "Shopsmart",
@@ -101,7 +115,7 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/mustafaakagunduz/e-commerce-website-react"
     },
     {
-        id: "project-7",
+        id: "project-8",
         title: {
             en: "Spring Concepts",
             tr: "Spring Concepts",
