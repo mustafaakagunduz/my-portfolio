@@ -16,7 +16,7 @@ export function Projects() {
             @keyframes projectFadeIn {
                 0% {
                     opacity: 0;
-                    transform: translateY(30px);
+                    transform: translateY(15px);
                 }
                 100% {
                     opacity: 1;
@@ -27,7 +27,7 @@ export function Projects() {
                 opacity: 0;
             }
             .project-card.visible {
-                animation: projectFadeIn 0.8s ease forwards;
+                animation: projectFadeIn 0.4s ease forwards;
             }
             @keyframes gradientAnimation {
                 0% {
@@ -61,7 +61,7 @@ export function Projects() {
         `;
         document.head.appendChild(style);
 
-        // Intersection Observer
+        // Intersection Observer with improved settings for faster loading
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -73,7 +73,10 @@ export function Projects() {
                     }
                 });
             },
-            { threshold: 0.1 }
+            {
+                threshold: 0.05, // Daha erken tetiklenmesi için düşürüldü
+                rootMargin: '100px' // Ekran kenarından 100px önce tetiklensin
+            }
         );
 
         // Observe all project cards
@@ -173,13 +176,13 @@ export function Projects() {
                         <div
                             id={project.id}
                             key={project.id}
-                            className={`project-card bg-card rounded-xl overflow-hidden transition-all duration-500 group ${visibleProjects[project.id] ? 'visible' : ''}`}
+                            className={`project-card bg-card rounded-xl overflow-hidden transition-all duration-300 group ${visibleProjects[project.id] ? 'visible' : ''}`}
                             style={{
                                 boxShadow: hoveredProject === project.id ?
                                     "0 20px 40px -20px var(--primary), 0 10px 20px rgba(0, 0, 0, 0.1)" :
                                     "0 10px 30px rgba(0, 0, 0, 0.1)",
                                 transform: hoveredProject === project.id ? "translateY(-5px)" : "translateY(0)",
-                                animationDelay: `${index * 0.2}s`
+                                animationDelay: `${index * 0.05}s` // Çok daha hızlı delay
                             }}
                             onMouseEnter={() => setHoveredProject(project.id)}
                             onMouseLeave={() => setHoveredProject(null)}
@@ -198,6 +201,7 @@ export function Projects() {
                                         src={project.imageUrl}
                                         alt={project.title[language]}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        loading="lazy" // Lazy loading ekledik
                                     />
 
                                     {/* Image frame effect */}
