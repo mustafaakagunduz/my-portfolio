@@ -7,7 +7,7 @@ export const translations = {
 
         "hero.greeting": "Hello, I'm",
         "hero.name": "Mustafa Akagündüz",
-        "hero.title": "Full-stack Web Developer",
+        "hero.title": "Software Engineer",
         "hero.description": "I create modern web applications with Next.js, React, TypeScript, and Tailwind CSS.",
         "hero.cta": "View Projects",
 
@@ -42,7 +42,7 @@ export const translations = {
 
         "hero.greeting": "Merhaba, Ben",
         "hero.name": "Mustafa Akagündüz",
-        "hero.title": "Full-Stack Web Geliştirici",
+        "hero.title": "Yazılım Mühendisi",
         "hero.description": "Next.js, React, TypeScript ve Tailwind CSS ile modern web uygulamaları geliştiriyorum.",
         "hero.cta": "Projeleri Görüntüle",
 
