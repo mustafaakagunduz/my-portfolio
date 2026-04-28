@@ -1,13 +1,12 @@
 "use client";
 
 import { useLanguage } from "@/app/components/LanguageProvider";
-import {JSX, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 
 export function About() {
     const { translations } = useLanguage();
     const [isVisible, setIsVisible] = useState(false);
     // Change null to number | null to fix the TypeScript error
-    const [hoverStat, setHoverStat] = useState<number | null>(null);
 
     useEffect(() => {
         // Observer for scroll animations
@@ -120,21 +119,9 @@ export function About() {
         }
     };
 
-    const scrollToContact = () => {
-        const contactSection = document.getElementById("contact");
-        if (contactSection) {
-            // Add offset to scroll a bit higher
-            const yOffset = -100;
-            const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
-        }
-    };
-
-    // Type definition for stat items
-    interface StatItem {
+interface StatItem {
         label: string;
         value: string;
-        icon: JSX.Element;
     }
 
     // Type definition for skill items
@@ -144,24 +131,8 @@ export function About() {
     }
 
     const stats: StatItem[] = [
-        {
-            label: translations["about.experience"],
-            value: "2+",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-            )
-        },
-        {
-            label: translations["about.projects"],
-            value: "12+",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                </svg>
-            )
-        },
+        { label: translations["about.experience"], value: "2+" },
+        { label: translations["about.projects"], value: "12+" },
     ];
 
     const skills: SkillItem[] = [
@@ -173,19 +144,19 @@ export function About() {
         { name: "TypeScript", color: "#3178C6" },
         { name: "Tailwind CSS", color: "#06B6D4" },
         { name: "PostgreSQL", color: "#336791" },
-        { name: "OpenAI API", color: "#3bbfae" },
         { name: "Github", color: "#cccccc" },
-        { name: "HTML", color: "#E34F26" },
-        { name: "CSS", color: "#1572B6" },
         { name: "JavaScript", color: "#F7DF1E" },
         { name: "Docker", color: "#2496ED" },
         { name: "Firebase", color: "#FFCA28" },
         { name: "Python", color: "#3776AB" },
         { name: "REST API", color: "#FF5733" },
         { name: "AWS", color: "#FF9900" },
+        { name: "Vite", color: "#646CFF" },
+        { name: "Express", color: "#888888" },
+        { name: "GraphQL", color: "#E10098" },
+        { name: "WebSocket", color: "#f6a623" },
         { name: "Vercel", color: "#948f8a" },
-        { name: "Brevo", color: "#40d248" },
-        { name: "Resend", color: "#ffffff" }
+        { name: "Resend", color: "#ffffff" },
 
 
 
@@ -252,30 +223,19 @@ export function About() {
                             {stats.map((stat, index) => (
                                 <div
                                     key={index}
-                                    className="p-5 rounded-lg relative overflow-hidden transition-all hover:scale-105 duration-300 cursor-pointer group"
+                                    className="p-5 rounded-lg"
                                     style={{
                                         background: "var(--card)",
                                         borderLeft: "3px solid var(--primary)",
-                                        boxShadow: hoverStat === index ? "0 10px 30px -10px var(--primary)" : "0 5px 15px rgba(0, 0, 0, 0.1)"
+                                        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)"
                                     }}
-                                    onMouseEnter={() => setHoverStat(index)}
-                                    onMouseLeave={() => setHoverStat(null)}
                                 >
-                                    {/* Background gradient on hover */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                                        style={{ background: "linear-gradient(135deg, var(--primary) 0%, transparent 100%)" }}
-                                    ></div>
-
-                                    <div className="flex items-center space-x-3 mb-3">
-                                        <div className="text-primary opacity-80">{stat.icon}</div>
-                                        <p
-                                            className="text-3xl font-bold"
-                                            style={{ color: "var(--primary)" }}
-                                        >
-                                            {stat.value}
-                                        </p>
-                                    </div>
+                                    <p
+                                        className="text-3xl font-bold mb-3"
+                                        style={{ color: "var(--primary)" }}
+                                    >
+                                        {stat.value}
+                                    </p>
                                     <p
                                         className="text-sm font-medium"
                                         style={{ color: "var(--muted-foreground)" }}
@@ -299,24 +259,23 @@ export function About() {
                                         boxShadow: "0 2px 10px rgba(0, 0, 0, 0.05)"
                                     }}
                                 >
-                                    <span style={{ color: skill.color }}>●</span>{" "}
                                     {skill.name}
                                 </span>
                             ))}
                         </div>
 
-                        {/* Buttons with improved hover effects */}
                         <div className="flex flex-wrap gap-4 mt-8">
                             <button
                                 onClick={scrollToProjects}
-                                className="group relative overflow-hidden text-primary-foreground px-7 py-3.5 rounded-md font-medium transition-all duration-300 cursor-pointer"
+                                className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
                                 style={{
-                                    background: "var(--primary)",
-                                    boxShadow: "0 4px 14px rgba(0, 0, 0, 0.15)"
+                                    background: "var(--muted)",
+                                    color: "var(--foreground)",
+                                    borderColor: "var(--primary)",
+                                    boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
                                 }}
                             >
-                                {/* Hover overlay */}
-                                <span className="absolute inset-0 w-full h-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+                                <span className="absolute inset-0 w-full h-full bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                                 <span className="relative flex items-center">
                                     {translations["hero.cta"]}
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -324,28 +283,6 @@ export function About() {
                                     </svg>
                                 </span>
                             </button>
-                            <button
-                                onClick={scrollToContact}
-                                className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
-                                style={{
-                                    background: "var(--accent)",
-                                    color: "var(--accent-foreground)",
-                                    borderColor: "var(--primary)",
-                                    boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
-                                }}
-                            >
-                                <span className="absolute inset-0 w-full h-full bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
-                                <span className="relative flex items-center">
-                                    {translations["nav.contact"]}
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 mt-6">
-
                             <a
                                 href="https://cv-uwdm.vercel.app"
                                 target="_blank"
@@ -359,24 +296,9 @@ export function About() {
                                 }}
                             >
                                 <span className="absolute inset-0 w-full h-full bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                                    />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                                 <span className="relative">{translations["about.viewCV"] || "View CV"}</span>
                             </a>
@@ -385,26 +307,15 @@ export function About() {
                                 download
                                 className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
                                 style={{
-                                    background: "var(--accent)",
-                                    color: "var(--accent-foreground)",
+                                    background: "var(--muted)",
+                                    color: "var(--foreground)",
                                     borderColor: "var(--primary)",
                                     boxShadow: "0 4px 14px rgba(0, 0, 0, 0.1)"
                                 }}
                             >
                                 <span className="absolute inset-0 w-full h-full bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-                                    />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                                 </svg>
                                 <span className="relative">{translations["about.downloadCV"] || "Download CV"}</span>
                             </a>

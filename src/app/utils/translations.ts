@@ -12,7 +12,7 @@ export const translations = {
         "hero.cta": "View Projects",
 
         "about.title": "About Me",
-        "about.description": "I am a software developer with a passion for creating clean, efficient, and user-friendly applications. With expertise in Spring Boot, Next.js, React, TypeScript, and Tailwind CSS, I build modern web solutions that deliver unique experiences.",
+        "about.description": "I am a web developer with a passion for building clean, efficient, and user-friendly applications. With my expertise in web development and its tools, I create modern web solutions that deliver unique user experiences.",
         "about.experience": "Years of Experience",
         "about.projects": "Completed Projects",
 
@@ -20,7 +20,8 @@ export const translations = {
         "about.viewCV": "View CV",
 
         "projects.title": "My Projects",
-        "projects.view": "View Project",
+        "projects.view": "View Gallery",
+        "projects.live": "Visit Site",
         "projects.github": "GitHub",
         "projects.technologies": "Technologies:",
         "projects.subtitle": "Check out some of my recent work",
@@ -47,7 +48,7 @@ export const translations = {
         "hero.cta": "Projeleri Görüntüle",
 
         "about.title": "Hakkımda",
-        "about.description": "Temiz, verimli ve kullanıcı dostu uygulamalar oluşturma tutkusuna sahip bir web geliştiricisiyim. Spring Boot, Next.js, React, TypeScript ve Tailwind CSS konusundaki uzmanlığımla, benzersiz kullanıcı deneyimleri sunan modern web çözümleri oluşturuyorum.",
+        "about.description": "Temiz, verimli ve kullanıcı dostu uygulamalar oluşturma tutkusuna sahip bir web geliştiricisiyim. Web geliştirme konusundaki ve araçlarındaki uzmanlığımla, benzersiz kullanıcı deneyimleri sunan modern web çözümleri oluşturuyorum.",
         "about.experience": "Yıllık Deneyim",
         "about.projects": "Tamamlanan Proje",
 
@@ -55,7 +56,8 @@ export const translations = {
         "about.viewCV": "CV Görüntüle",
 
         "projects.title": "Projelerim",
-        "projects.view": "Projeyi Görüntüle",
+        "projects.view": "Görseller",
+        "projects.live": "Projeye Git",
         "projects.github": "GitHub",
         "projects.technologies": "Teknolojiler:",
         "projects.subtitle": "Son çalışmalarımdan bazılarını inceleyin",

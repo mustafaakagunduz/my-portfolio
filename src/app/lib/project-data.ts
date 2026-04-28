@@ -6,12 +6,13 @@ export interface Project {
     description: Record<Language, string>;
     technologies: string[];
     imageUrl: string;
+    images?: string[];
     demoUrl?: string;
     githubUrl?: string;
 }
 
 export const projects: Project[] = [
-    {
+    /*{
         id: "project-1",
         title: {
             en: "DGD Global Website",
@@ -25,6 +26,19 @@ export const projects: Project[] = [
         imageUrl: "/dgd.png",
         demoUrl: "https://dgd-taupe.vercel.app",
 
+    },*/{
+        id: "project-0",
+        title: {
+            en: "AIR Guard",
+            tr: "AIR Guard",
+        },
+        description: {
+            en: "Real-time aircraft tracking application",
+            tr: "Gerçek zamanlı hava aracı takip uygulaması"
+        },
+        technologies: ["React", "TypeScript", "Vite", "Express", "WebSocket"],
+        imageUrl: "/aircommand-2.png",
+        images: ["/aircommand-2.png", "/aircommand-1.png"],
     },{
         id: "project-2",
         title: {
@@ -37,6 +51,7 @@ export const projects: Project[] = [
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API", "AWS", "Vercel"],
         imageUrl: "/hrsam.png",
+        images: ["/hrsam.png"],
         demoUrl: "https://www.hrsam.org/",
         githubUrl: "https://github.com/mustafaakagunduz/BBM479-BE"
     },{
@@ -51,6 +66,7 @@ export const projects: Project[] = [
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
         imageUrl: "/question.png",
+        images: ["/question.png"],
         demoUrl: "https://question-tracker-seven.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/question-tracker"
     },
@@ -66,10 +82,11 @@ export const projects: Project[] = [
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
         imageUrl: "/kanban.png",
+        images: ["/kanban.png"],
         demoUrl: "https://www.kanban.im",
         githubUrl: "https://github.com/mustafaakagunduz/personal-kanban-board"
     },
-    {
+    /*{
         id: "project-5",
         title: {
             en: "Sorry, but..",
@@ -128,5 +145,5 @@ export const projects: Project[] = [
         imageUrl: "/spring.png",
         demoUrl: "https://interior-design-company-website.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/interior-design-company-website"
-    }
+    }*/
 ];
