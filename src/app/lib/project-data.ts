@@ -116,7 +116,7 @@ export const projects: Project[] = [
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
         imageUrl: "/kanban.png",
         images: ["/kanban.png"],
-        demoUrl: "https://www.kanban.im",
+        demoUrl: "https://personal-kanban-board.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/personal-kanban-board"
     },
     /*{
