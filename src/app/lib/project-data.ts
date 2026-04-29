@@ -39,7 +39,40 @@ export const projects: Project[] = [
         technologies: ["React", "TypeScript", "Vite", "Express", "WebSocket"],
         imageUrl: "/aircommand-2.png",
         images: ["/aircommand-2.png", "/aircommand-1.png"],
-    },{
+    },
+
+    {
+        id: "project-new",
+        title: {
+            en: "Transyük",
+            tr: "Transyük",
+        },
+        description: {
+            en: "A logistics platform that connects shippers, carriers, and brokers in road and maritime transportation, streamlining bidding, matching, and end-to-end shipment management.",
+            tr: "Karayolu ve denizyolu taşımacılığında yük sahipleri, taşıyıcılar ve brokerları tek bir platformda buluşturan; teklif, eşleştirme ve süreç yönetimini kolaylaştıran bir lojistik platform."
+        },
+        technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "WebSocket", "AWS", "Vercel"],
+        imageUrl: "/transyuk-1.png",
+        images: ["/transyuk-1.png", "/transyuk-2.png", "/transyuk-3.png", "/transyuk-4.png", "/transyuk-5.png", "/transyuk-6.png", "/transyuk-7.png", "/transyuk-8.png"],
+    },
+
+    {
+        id: "project-new-2",
+        title: {
+            en: "Encera",
+            tr: "Ençera",
+        },
+        description: {
+            en: "A real estate platform where listings are evaluated through user ratings and reviews, enabling low-commission transactions while promoting more transparent and fair pricing through community-driven feedback.",
+            tr: "Emlak ilanlarının kullanıcı yorumları ve puanlamalarıyla değerlendirildiği; düşük komisyonlu işlem imkânı sunarken topluluk geri bildirimleriyle daha şeffaf ve adil fiyatlandırmayı teşvik eden bir emlak platformu."
+        },
+        technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Redis", "Tailwind CSS", "WebSocket", "AWS"],
+        imageUrl: "/encera-1.png",
+        images: ["/encera-1.png", "/encera-2.png","/encera-3.png"],
+        githubUrl: "https://github.com/mustafaakagunduz/encera-be"
+    },
+
+    {
         id: "project-2",
         title: {
             en: "SkillFit",
@@ -51,8 +84,8 @@ export const projects: Project[] = [
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API", "AWS", "Vercel"],
         imageUrl: "/hrsam.png",
-        images: ["/hrsam.png"],
-        demoUrl: "https://www.hrsam.org/",
+        images: ["/hrsam.png" , "skillfit-1.png","skillfit-2.png","skillfit-5.png","skillfit-6.png"],
+
         githubUrl: "https://github.com/mustafaakagunduz/BBM479-BE"
     },{
         id: "project-3",

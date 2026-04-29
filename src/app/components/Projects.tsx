@@ -116,7 +116,7 @@ export function Projects() {
             "Material UI": "#0081CB",
             "MongoDB": "#47A248",
             "MySQL": "#4479A1",
-            "Next.js": "#7928CA",
+            "Next.js": "#eaeaea",
             "Node.js": "#339933",
             "OpenAI API": "#3bbfae",
             "PostgreSQL": "#336791",
@@ -124,6 +124,7 @@ export function Projects() {
             "React": "#61DAFB",
             "Redux": "#764ABC",
             "REST API": "#FF5733",
+            "Redis":"#e32c2c",
             "Spring Boot": "#6DB33F",
             "Supabase": "#099b5e",
             "Svelte": "#FF3E00",
@@ -132,7 +133,7 @@ export function Projects() {
             "Vue.js": "#4FC08D",
             "Vite": "#646CFF",
             "WebSocket": "#f6a623",
-            "Vercel" : "#948f8a",
+            "Vercel" : "#eaeaea",
             "Brevo" : "#40d248",
             "Resend" : "#ffffff"
         };

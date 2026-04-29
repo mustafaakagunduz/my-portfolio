@@ -139,12 +139,13 @@ interface StatItem {
         { name: "Spring Boot", color: "#6DB33F" },
         { name: "Supabase", color: "#099b5e" },
         { name: "Java", color: "#007396" },
-        { name: "Next.js", color: "#7928CA" },
+        { name: "Next.js", color: "#eaeaea" },
         { name: "React", color: "#61DAFB" },
         { name: "TypeScript", color: "#3178C6" },
         { name: "Tailwind CSS", color: "#06B6D4" },
         { name: "PostgreSQL", color: "#336791" },
         { name: "Github", color: "#cccccc" },
+        { name: "Redis", color: "#e32c2c" },
         { name: "JavaScript", color: "#F7DF1E" },
         { name: "Docker", color: "#2496ED" },
         { name: "Firebase", color: "#FFCA28" },
@@ -155,7 +156,7 @@ interface StatItem {
         { name: "Express", color: "#888888" },
         { name: "GraphQL", color: "#E10098" },
         { name: "WebSocket", color: "#f6a623" },
-        { name: "Vercel", color: "#948f8a" },
+        { name: "Vercel", color: "#eaeaea" },
         { name: "Resend", color: "#ffffff" },
 
 
