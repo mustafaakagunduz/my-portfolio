@@ -12,6 +12,21 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+    {
+        id: "skytrack",
+        title: {
+            en: "SkyTrack",
+            tr: "SkyTrack",
+        },
+        description: {
+            en: "A real-time aircraft tracking platform: a simulator or the live OpenSky Network API feeds positions into PostGIS, broadcast over WebSockets and rendered live on a MapLibre map, with radius search, flight trails, and filters.",
+            tr: "Gerçek zamanlı hava aracı takip platformu: simülatör veya canlı OpenSky Network API'sinden gelen konumlar PostGIS'e işlenir, WebSocket üzerinden yayınlanır ve MapLibre haritasında canlı olarak gösterilir; yarıçap araması, uçuş izleri ve filtreler içerir."
+        },
+        technologies: ["Django", "PostgreSQL", "PostGIS", "Redis", "React", "TypeScript", "MapLibre GL", "Tailwind CSS", "Docker"],
+        imageUrl: "/skytrack-1.png",
+        images: ["/skytrack-1.png", "/skytrack-2.png"],
+        githubUrl: "https://github.com/mustafaakagunduz/sky-track",
+    },
     /*{
         id: "project-1",
         title: {

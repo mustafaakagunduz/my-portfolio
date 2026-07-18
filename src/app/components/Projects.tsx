@@ -60,12 +60,6 @@ export function Projects() {
                 background-size: 200% 200%;
                 animation: gradientAnimation 15s ease infinite;
             }
-            @keyframes techBadgePulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.05); }
-                100% { transform: scale(1); }
-            }
-            .tech-badge:hover { animation: techBadgePulse 0.5s ease-in-out; }
             @keyframes lightboxFadeIn {
                 from { opacity: 0; }
                 to { opacity: 1; }
@@ -96,49 +90,6 @@ export function Projects() {
             projectElements.forEach(el => observer.unobserve(el));
         };
     }, []);
-
-    const getTechColor = (tech: string): string => {
-        const techColors: Record<string, string> = {
-            "Angular": "#DD0031",
-            "AWS": "#FF9900",
-            "Bootstrap": "#7952B3",
-            "CSS": "#1572B6",
-            "Django": "#092E20",
-            "Docker": "#2496ED",
-            "Express": "#888888",
-            "Firebase": "#FFCA28",
-            "Flask": "#000000",
-            "Github": "#cccccc",
-            "GraphQL": "#E10098",
-            "HTML": "#E34F26",
-            "Java": "#007396",
-            "JavaScript": "#F7DF1E",
-            "Material UI": "#0081CB",
-            "MongoDB": "#47A248",
-            "MySQL": "#4479A1",
-            "Next.js": "#eaeaea",
-            "Node.js": "#339933",
-            "OpenAI API": "#3bbfae",
-            "PostgreSQL": "#336791",
-            "Python": "#3776AB",
-            "React": "#61DAFB",
-            "Redux": "#764ABC",
-            "REST API": "#FF5733",
-            "Redis":"#e32c2c",
-            "Spring Boot": "#6DB33F",
-            "Supabase": "#099b5e",
-            "Svelte": "#FF3E00",
-            "Tailwind CSS": "#06B6D4",
-            "TypeScript": "#3178C6",
-            "Vue.js": "#4FC08D",
-            "Vite": "#646CFF",
-            "WebSocket": "#f6a623",
-            "Vercel" : "#eaeaea",
-            "Brevo" : "#40d248",
-            "Resend" : "#ffffff"
-        };
-        return techColors[tech] || "#6E6E6E";
-    };
 
     return (
         <section id="projects" className="py-24 relative overflow-hidden">
@@ -213,21 +164,9 @@ export function Projects() {
                                             <p className="text-sm font-medium text-primary mb-3">
                                                 {translations["projects.technologies"]}
                                             </p>
-                                            <div className="flex flex-wrap gap-2 mb-2">
-                                                {project.technologies.map((tech) => (
-                                                    <span
-                                                        key={tech}
-                                                        className="text-xs px-3 py-1.5 rounded-full tech-badge transition-all duration-300 flex items-center"
-                                                        style={{
-                                                            background: `${getTechColor(tech)}20`,
-                                                            color: getTechColor(tech),
-                                                            border: `1px solid ${getTechColor(tech)}40`
-                                                        }}
-                                                    >
-                                                        {tech}
-                                                    </span>
-                                                ))}
-                                            </div>
+                                            <p className="text-base text-foreground/70">
+                                                {project.technologies.join(", ")}
+                                            </p>
                                         </div>
                                     </div>
 

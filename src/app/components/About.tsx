@@ -124,44 +124,41 @@ interface StatItem {
         value: string;
     }
 
-    // Type definition for skill items
-    interface SkillItem {
-        name: string;
-        color: string;
-    }
-
     const stats: StatItem[] = [
         { label: translations["about.experience"], value: "2+" },
         { label: translations["about.projects"], value: "12+" },
     ];
 
-    const skills: SkillItem[] = [
-        { name: "Spring Boot", color: "#6DB33F" },
-        { name: "Supabase", color: "#099b5e" },
-        { name: "Java", color: "#007396" },
-        { name: "Next.js", color: "#eaeaea" },
-        { name: "React", color: "#61DAFB" },
-        { name: "TypeScript", color: "#3178C6" },
-        { name: "Tailwind CSS", color: "#06B6D4" },
-        { name: "PostgreSQL", color: "#336791" },
-        { name: "Github", color: "#cccccc" },
-        { name: "Redis", color: "#e32c2c" },
-        { name: "JavaScript", color: "#F7DF1E" },
-        { name: "Docker", color: "#2496ED" },
-        { name: "Firebase", color: "#FFCA28" },
-        { name: "Python", color: "#3776AB" },
-        { name: "REST API", color: "#FF5733" },
-        { name: "AWS", color: "#FF9900" },
-        { name: "Vite", color: "#646CFF" },
-        { name: "Express", color: "#888888" },
-        { name: "GraphQL", color: "#E10098" },
-        { name: "WebSocket", color: "#f6a623" },
-        { name: "Vercel", color: "#eaeaea" },
-        { name: "Resend", color: "#ffffff" },
-
-
-
-
+    const skills: string[] = [
+        "Spring Boot",
+        "Supabase",
+        "Java",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "PostGIS",
+        "Github",
+        "GitHub Actions",
+        "Redis",
+        "JavaScript",
+        "Docker",
+        "Firebase",
+        "Python",
+        "Django",
+        "GeoDjango",
+        "Django Channels",
+        "REST API",
+        "AWS",
+        "Vite",
+        "Express",
+        "GraphQL",
+        "WebSocket",
+        "MapLibre GL",
+        "Zustand",
+        "Vercel",
+        "Resend",
     ];
 
     return (
@@ -255,12 +252,12 @@ interface StatItem {
                                     style={{
                                         background: "var(--card)",
                                         color: "var(--foreground)",
-                                        borderLeft: `3px solid ${skill.color}`,
+                                        borderLeft: "3px solid var(--primary)",
                                         animationDelay: `${index * 0.1}s`,
                                         boxShadow: "0 2px 10px rgba(0, 0, 0, 0.05)"
                                     }}
                                 >
-                                    {skill.name}
+                                    {skill}
                                 </span>
                             ))}
                         </div>
