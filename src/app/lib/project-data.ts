@@ -13,6 +13,21 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "pinorex",
+        title: {
+            en: "Pinorex",
+            tr: "Pinorex",
+        },
+        description: {
+            en: "A real estate portfolio management panel that lets agencies list, filter, and track their properties on an interactive map, with team-based access and status management.",
+            tr: "Emlak ofislerinin mülk portföylerini interaktif bir harita üzerinde listeleyip filtreleyebildiği, ekip bazlı erişim ve durum yönetimi sunan bir gayrimenkul yönetim paneli."
+        },
+        technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Docker"],
+        imageUrl: "/pinorex-1.png",
+        images: ["/pinorex-1.png", "/pinorex-2.png"],
+        githubUrl: "https://github.com/mustafaakagunduz/emlakci-tenant",
+    },
+    {
         id: "skytrack",
         title: {
             en: "SkyTrack",

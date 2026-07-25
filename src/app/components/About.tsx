@@ -282,7 +282,7 @@ interface StatItem {
                                 </span>
                             </button>
                             <a
-                                href="https://cv-uwdm.vercel.app"
+                                href="/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
@@ -302,7 +302,7 @@ interface StatItem {
                             </a>
                             <a
                                 href="/resume.pdf"
-                                download
+                                download="CV-Mustafa-Ihsan-Akagunduz.pdf"
                                 className="group inline-flex items-center border px-5 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer relative overflow-hidden"
                                 style={{
                                     background: "var(--muted)",
