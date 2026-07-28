@@ -87,7 +87,7 @@ export function Navbar() {
             }`}
         >
             <div className="container mx-auto px-4 md:px-6">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-end md:justify-between">
                     {/* Left space for symmetry */}
                     <div className="w-1/4 md:block hidden"></div>
 
@@ -148,7 +148,7 @@ export function Navbar() {
                     </div>
 
                     {/* Right side controls */}
-                    <div className="flex items-center space-x-4 w-1/4 justify-end">
+                    <div className="flex items-center space-x-4 justify-end w-auto md:w-1/4">
                         <LanguageSelector />
                         <ThemeToggle />
 
@@ -195,14 +195,14 @@ export function Navbar() {
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="md:hidden mt-4 pb-4 pt-2 border-t border-border">
-                        <div className="flex flex-col space-y-4 items-center">
+                        <div className="flex flex-col space-y-4 items-end">
                             {navItems.map((item) => (
-                                <div key={item.href} className="w-full text-center">
+                                <div key={item.href} className="w-full text-right">
                                     {item.isDropdown ? (
                                         <div className="space-y-2">
                                             <button
                                                 onClick={() => toggleDropdown(item.href)}
-                                                className="flex items-center justify-center w-full text-foreground/90 hover:text-primary transition duration-200 cursor-pointer"
+                                                className="flex items-center justify-end w-full text-foreground/90 hover:text-primary transition duration-200 cursor-pointer"
                                             >
                                                 <span>{item.name}</span>
                                                 <svg
@@ -228,7 +228,7 @@ export function Navbar() {
                                                     {item.dropdownItems?.map((dropdownItem) => (
                                                         <button
                                                             key={dropdownItem.href}
-                                                            className="block w-full text-center text-foreground/80 hover:text-primary transition cursor-pointer py-1"
+                                                            className="block w-full text-right text-foreground/80 hover:text-primary transition cursor-pointer py-1"
                                                             onClick={() => scrollToSection(dropdownItem.href)}
                                                         >
                                                             {dropdownItem.name}
@@ -240,7 +240,7 @@ export function Navbar() {
                                     ) : (
                                         <button
                                             onClick={() => scrollToSection(item.href)}
-                                            className="text-foreground/90 hover:text-primary transition duration-200 text-center w-full cursor-pointer"
+                                            className="text-foreground/90 hover:text-primary transition duration-200 text-right w-full cursor-pointer"
                                         >
                                             {item.name}
                                         </button>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useLayoutEffect, useState } from "react";
 
 type Theme = "dark" | "light";
 
@@ -12,18 +12,19 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState<Theme>("dark");
+    // Server always renders "light" (no way to know the client's stored
+    // preference during SSR), so we must start client state at "light" too
+    // to match hydration. The inline script in layout.tsx already applied
+    // the correct "dark" class to <html> before this ever runs, so this
+    // effect just syncs React state to match before the browser paints.
+    const [theme, setTheme] = useState<Theme>("light");
 
-    useEffect(() => {
-        const storedTheme = localStorage.getItem("theme") as Theme | null;
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    useLayoutEffect(() => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setTheme(isDark ? "dark" : "light");
 
-        if (storedTheme) {
-            setTheme(storedTheme);
-            document.documentElement.classList.toggle("dark", storedTheme === "dark");
-        } else if (prefersDark) {
-            setTheme("dark");
-            document.documentElement.classList.add("dark");
+        if (!localStorage.getItem("theme")) {
+            localStorage.setItem("theme", isDark ? "dark" : "light");
         }
     }, []);
 
