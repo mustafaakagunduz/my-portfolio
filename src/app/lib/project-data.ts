@@ -13,6 +13,21 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "rolefit",
+        title: {
+            en: "RoleFit",
+            tr: "RoleFit",
+        },
+        description: {
+            en: "An AI-powered service that analyzes how well a CV (text or PDF) fits a job description: a multi-step pipeline extracts candidate skills and role requirements, then compares them via OpenAI structured outputs to produce a fit score, matched skills with evidence, gaps with concrete suggestions, and CV bullet ideas.",
+            tr: "Bir CV'nin (metin veya PDF) bir iş ilanına ne kadar uyduğunu analiz eden yapay zekâ destekli bir servis: çok adımlı bir akış önce aday becerilerini ve rol gereksinimlerini çıkarır, sonra OpenAI'ın yapılandırılmış çıktısıyla karşılaştırıp bir uyum skoru, kanıtlı eşleşen beceriler, somut önerili açıklar ve CV madde önerileri üretir."
+        },
+        technologies: ["ASP.NET Core", "C#", "React", "TypeScript", "OpenAI API", "PdfPig"],
+        imageUrl: "/rolefit-1.png",
+        images: ["/rolefit-1.png", "/rolefit-2.png"],
+        githubUrl: "https://github.com/mustafaakagunduz/RoleFit",
+    },
+    {
         id: "pinorex",
         title: {
             en: "Pinorex",
