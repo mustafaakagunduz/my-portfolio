@@ -6,8 +6,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-nunito);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-instrument-sans);
+  --font-mono: var(--font-jetbrains);
+  --font-serif: var(--font-instrument);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -45,92 +46,73 @@
 
 :root {
   --radius: 0.625rem;
-  /* Changed from pure white to darker beige/off-white color */
-  --background: oklch(0.94 0.03 90); /* Warmer, medium beige background */
-  --foreground: oklch(0.145 0 0);
-  /* Changed card background to be lighter than main background */
-  --card: oklch(0.97 0.02 90); /* Lighter shade for cards to create contrast */
-  --card-foreground: oklch(0.145 0 0);
-  /* Changed popover background to match */
-  --popover: oklch(0.98 0.02 90);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  /* Adjusted secondary to be slightly warmer */
-  --secondary: oklch(0.92 0.03 90);
-  --secondary-foreground: oklch(0.205 0 0);
-  /* Adjusted muted to be slightly warmer */
-  --muted: oklch(0.9 0.03 90);
-  --muted-foreground: oklch(0.556 0 0);
-  /* Adjusted accent to be slightly warmer */
-  --accent: oklch(0.9 0.03 90);
-  --accent-foreground: oklch(0.205 0 0);
+  /* Sıcak kâğıt zemin + mürekkep siyahı + caz sarısı */
+  --background: oklch(0.945 0.012 85);
+  --foreground: oklch(0.17 0.01 60);
+  --card: oklch(0.975 0.008 85);
+  --card-foreground: oklch(0.17 0.01 60);
+  --popover: oklch(0.975 0.008 85);
+  --popover-foreground: oklch(0.17 0.01 60);
+  --primary: oklch(0.7 0.145 80);
+  --primary-foreground: oklch(0.17 0.01 60);
+  --secondary: oklch(0.91 0.012 85);
+  --secondary-foreground: oklch(0.2 0.01 60);
+  --muted: oklch(0.91 0.012 85);
+  --muted-foreground: oklch(0.48 0.01 60);
+  --accent: oklch(0.9 0.015 85);
+  --accent-foreground: oklch(0.2 0.01 60);
   --destructive: oklch(0.577 0.245 27.325);
-  /* Adjusted border to complement the new background */
-  --border: oklch(0.85 0.03 90);
-  --input: oklch(0.85 0.03 90);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.17 0.01 60 / 14%);
+  --input: oklch(0.17 0.01 60 / 14%);
+  --ring: oklch(0.7 0.145 80 / 60%);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  /* Adjusted sidebar to match main background */
-  --sidebar: oklch(0.94 0.03 90);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  /* Adjusted sidebar accent */
-  --sidebar-accent: oklch(0.9 0.03 90);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  /* Adjusted sidebar border */
-  --sidebar-border: oklch(0.85 0.03 90);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.945 0.012 85);
+  --sidebar-foreground: oklch(0.17 0.01 60);
+  --sidebar-primary: oklch(0.7 0.145 80);
+  --sidebar-primary-foreground: oklch(0.17 0.01 60);
+  --sidebar-accent: oklch(0.9 0.015 85);
+  --sidebar-accent-foreground: oklch(0.2 0.01 60);
+  --sidebar-border: oklch(0.17 0.01 60 / 14%);
+  --sidebar-ring: oklch(0.7 0.145 80 / 60%);
 }
 
 .dark {
-  /* Koyu lacivert arka plan */
-  --background: oklch(0.15 0.05 260);
-  --foreground: oklch(0.985 0 0);
-  /* Arka plandan biraz daha açık lacivert kartlar */
-  --card: oklch(0.18 0.06 260);
-  --card-foreground: oklch(0.985 0 0);
-  /* Popup menüler için kart rengi */
-  --popover: oklch(0.18 0.06 260);
-  --popover-foreground: oklch(0.985 0 0);
-  /* Accent butonlar için daha belirgin bir lacivert */
-  --primary: oklch(0.8 0.1 260);
-  --primary-foreground: oklch(0.16 0.05 260);
-  /* İkincil butonlar için daha koyu lacivert */
-  --secondary: oklch(0.22 0.05 260);
-  --secondary-foreground: oklch(0.985 0 0);
-  /* Daha az öne çıkan elementler için */
-  --muted: oklch(0.22 0.04 260);
-  --muted-foreground: oklch(0.7 0.02 260);
-  /* Vurgu rengi elementler için */
-  --accent: oklch(0.22 0.07 260);
-  --accent-foreground: oklch(0.985 0 0);
-  /* Hata durumları için kırmızı ton (değişmedi) */
+  /* Neredeyse siyah, sıcak tonlu zemin */
+  --background: oklch(0.145 0.005 60);
+  --foreground: oklch(0.94 0.012 85);
+  --card: oklch(0.19 0.006 60);
+  --card-foreground: oklch(0.94 0.012 85);
+  --popover: oklch(0.19 0.006 60);
+  --popover-foreground: oklch(0.94 0.012 85);
+  --primary: oklch(0.85 0.155 88);
+  --primary-foreground: oklch(0.145 0.005 60);
+  --secondary: oklch(0.23 0.006 60);
+  --secondary-foreground: oklch(0.94 0.012 85);
+  --muted: oklch(0.23 0.006 60);
+  --muted-foreground: oklch(0.68 0.01 70);
+  --accent: oklch(0.25 0.008 60);
+  --accent-foreground: oklch(0.94 0.012 85);
   --destructive: oklch(0.704 0.191 22.216);
-  /* Kenar çizgileri için biraz daha açık lacivert */
-  --border: oklch(0.2 0.04 260 / 30%);
-  --input: oklch(0.2 0.04 260 / 30%);
-  --ring: oklch(0.4 0.08 260);
-  /* Grafik renkleri - daha canlı tonlar */
+  --border: oklch(1 0 0 / 11%);
+  --input: oklch(1 0 0 / 11%);
+  --ring: oklch(0.85 0.155 88 / 60%);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  /* Sidebar elementleri için lacivert tonları */
-  --sidebar: oklch(0.18 0.06 260);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.22 0.07 260);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.2 0.04 260 / 30%);
-  --sidebar-ring: oklch(0.4 0.08 260);
+  --sidebar: oklch(0.19 0.006 60);
+  --sidebar-foreground: oklch(0.94 0.012 85);
+  --sidebar-primary: oklch(0.85 0.155 88);
+  --sidebar-primary-foreground: oklch(0.145 0.005 60);
+  --sidebar-accent: oklch(0.25 0.008 60);
+  --sidebar-accent-foreground: oklch(0.94 0.012 85);
+  --sidebar-border: oklch(1 0 0 / 11%);
+  --sidebar-ring: oklch(0.85 0.155 88 / 60%);
 }
 
 /* Added enhanced shadow for dark mode cards */
@@ -147,4 +129,182 @@
   .dark .bg-card {
     @apply shadow-md shadow-black/20;
   }
+}
+
+/* ───────────── Hero: plak kasası ───────────── */
+
+/* Film greni */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.9s steps(4) infinite;
+  z-index: 1;
+}
+.dark .grain::after { opacity: 0.09; }
+
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3%, 2%); }
+  50% { transform: translate(2%, -3%); }
+  75% { transform: translate(-1%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ── Gerçekçi plak ── */
+.vinyl {
+  border-radius: 9999px;
+  box-shadow:
+    0 18px 40px -12px rgba(0,0,0,0.65),
+    0 4px 10px -4px rgba(0,0,0,0.5);
+}
+
+/* Dönen yüzey: dış kenar, şarkı arası boşluklar, ince oluklar, çıkış bölgesi */
+.vinyl-disc {
+  background:
+    /* şarkı arası boşluklar + çıkış bölgesi + dış dudak */
+    radial-gradient(circle closest-side,
+      transparent 0 33.5%,
+      #0b0b0b 33.5% 37%,                      /* etiket çevresi düz çıkış bölgesi */
+      rgba(255,255,255,0.025) 37% 37.4%,
+      transparent 37.4% 50%,
+      rgba(0,0,0,0.7) 50% 50.7%,              /* parça arası */
+      transparent 50.7% 63%,
+      rgba(0,0,0,0.7) 63% 63.7%,
+      transparent 63.7% 76%,
+      rgba(0,0,0,0.7) 76% 76.7%,
+      transparent 76.7% 95%,
+      #0d0d0d 95% 96%,                        /* giriş oluğu */
+      #1d1d1d 96% 98.6%,                      /* kabarık dış dudak */
+      #2a2a2a 98.6% 99.2%,
+      #111 99.2% 100%),
+    /* mikro oluklar */
+    repeating-radial-gradient(circle closest-side,
+      #121212 0 1px,
+      #191919 1px 1.6px,
+      #101010 1.6px 2.4px),
+    #121212;
+}
+
+/* Etiket: kâğıt dokusu + hafif eskime */
+.vinyl-label {
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.25), inset 0 0 18px rgba(0,0,0,0.18);
+}
+.vinyl-label::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,0.35), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+}
+.vinyl-hole {
+  background: radial-gradient(circle, #050505 0 45%, #2b2b2b 60%, #0b0b0b 100%);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15);
+}
+
+/* Sabit yansıma: iki karşılıklı "papyon" parlama + hafif yanardöner ton */
+.vinyl-sheen {
+  background:
+    conic-gradient(from -20deg,
+      transparent 0deg 18deg,
+      rgba(255,255,255,0.16) 38deg,
+      rgba(255,255,255,0.05) 52deg,
+      transparent 70deg 198deg,
+      rgba(255,255,255,0.12) 218deg,
+      rgba(255,255,255,0.04) 232deg,
+      transparent 250deg 360deg),
+    conic-gradient(from 10deg,
+      rgba(255,80,160,0.035), rgba(80,200,255,0.04), rgba(255,230,90,0.03),
+      rgba(255,80,160,0.035), rgba(80,200,255,0.04), rgba(255,230,90,0.03), rgba(255,80,160,0.035));
+  -webkit-mask: radial-gradient(circle closest-side, transparent 33%, #000 37%, #000 99%, transparent 100%);
+          mask: radial-gradient(circle closest-side, transparent 33%, #000 37%, #000 99%, transparent 100%);
+  mix-blend-mode: screen;
+}
+
+@keyframes vinyl-spin { to { transform: rotate(360deg); } }
+.vinyl-spin { animation: vinyl-spin 2.4s linear infinite; }
+.vinyl-spin-slow { animation: vinyl-spin 6s linear infinite; }
+
+/* Kasa açılış animasyonu */
+@keyframes crate-drop {
+  from { opacity: 0; translate: 0 60px; }
+  to { opacity: 1; translate: 0 0; }
+}
+.crate-drop { animation: crate-drop 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(110%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+/* Modal */
+@keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sleeve-in {
+  from { opacity: 0; transform: translateY(40px) rotate(-6deg) scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes disc-out {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(var(--disc-out, 48%)); }
+}
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+.modal-backdrop { animation: backdrop-in 0.35s ease both; }
+.modal-sleeve { animation: sleeve-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.modal-disc { animation: disc-out 1s 0.35s cubic-bezier(0.5, 0, 0.1, 1) both; }
+.modal-panel > * { animation: panel-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.modal-closing { opacity: 0; transition: opacity 0.35s ease; }
+
+/* Özel imleç etkinken sistem imlecini gizle */
+html.has-custom-cursor,
+html.has-custom-cursor * { cursor: none !important; }
+
+/* Tecrübe çekmecesi */
+@keyframes drawer-in { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes drawer-out { to { transform: translateX(100%); } }
+.drawer-backdrop { animation: backdrop-in 0.35s ease both; transition: opacity 0.35s ease; }
+.drawer-panel { animation: drawer-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.drawer-closing .drawer-panel { animation: drawer-out 0.35s cubic-bezier(0.5, 0, 0.75, 0) both; }
+.drawer-closing .drawer-backdrop { opacity: 0; }
+
+/* Çekmecenin kaydırma çubuğu: vurgu rengi */
+.drawer-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+.drawer-scroll::-webkit-scrollbar { width: 8px; }
+.drawer-scroll::-webkit-scrollbar-track { background: transparent; }
+.drawer-scroll::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 9999px;
+  border: 2px solid var(--background);
+}
+.drawer-scroll::-webkit-scrollbar-thumb:hover { background: color-mix(in oklch, var(--primary) 80%, white); }
+
+/* Metin seçimi: caz sarısı zemin, kontrast yazı */
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Yetenek bandı */
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 60s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee, .drawer-panel, .drawer-backdrop,
+  .grain::after, .vinyl-spin, .vinyl-spin-slow, .crate-drop, .rise,
+  .modal-backdrop, .modal-sleeve, .modal-disc, .modal-panel > * { animation: none !important; }
+  .modal-disc { transform: translateX(var(--disc-out, 48%)); }
 }

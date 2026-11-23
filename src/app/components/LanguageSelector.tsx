@@ -35,7 +35,7 @@ export function LanguageSelector() {
     return (
         <div className="relative" ref={dropdownRef}>
             <button
-                className="p-2 rounded-full bg-secondary/50 hover:bg-secondary/80 transition flex items-center justify-center cursor-pointer"
+                className="p-2.5 rounded-full bg-secondary/50 hover:bg-secondary/80 transition flex items-center justify-center cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Select language"
             >
@@ -46,7 +46,7 @@ export function LanguageSelector() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5"
+            className="w-[22px] h-[22px]"
         >
             <path
                 strokeLinecap="round"

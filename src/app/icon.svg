@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <!-- Mil deliği şeffaf kalsın diye maske -->
+    <mask id="hole">
+      <rect width="64" height="64" fill="#fff"/>
+      <circle cx="32" cy="32" r="2.6" fill="#000"/>
+    </mask>
+    <radialGradient id="disc" cx="50%" cy="50%" r="50%">
+      <stop offset="0.36" stop-color="#0c0c0c"/>
+      <stop offset="0.9" stop-color="#171717"/>
+      <stop offset="0.96" stop-color="#262626"/>
+      <stop offset="1" stop-color="#0e0e0e"/>
+    </radialGradient>
+    <radialGradient id="label" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#f7cf4a"/>
+      <stop offset="1" stop-color="#d9a420"/>
+    </radialGradient>
+  </defs>
+
+  <g mask="url(#hole)">
+    <!-- Plak gövdesi -->
+    <circle cx="32" cy="32" r="31" fill="url(#disc)"/>
+
+    <!-- Oluklar / parça araları -->
+    <g fill="none" stroke="#2c2c2c" stroke-width="0.6">
+      <circle cx="32" cy="32" r="27"/>
+      <circle cx="32" cy="32" r="23.5"/>
+      <circle cx="32" cy="32" r="20"/>
+      <circle cx="32" cy="32" r="16.5"/>
+    </g>
+
+    <!-- Sabit ışık yansıması (papyon) -->
+    <path d="M32 32 L47 5 A31 31 0 0 1 57 13 Z" fill="#fff" opacity="0.13"/>
+    <path d="M32 32 L17 59 A31 31 0 0 1 7 51 Z" fill="#fff" opacity="0.09"/>
+
+    <!-- Etiket -->
+    <circle cx="32" cy="32" r="11.5" fill="url(#label)"/>
+    <circle cx="32" cy="32" r="9.5" fill="none" stroke="#000" stroke-opacity="0.22" stroke-width="0.6"/>
+    <circle cx="32" cy="32" r="3.6" fill="#000" fill-opacity="0.2"/>
+  </g>
+</svg>

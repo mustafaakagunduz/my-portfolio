@@ -8,7 +8,7 @@ export function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-secondary/50 hover:bg-secondary/80 transition cursor-pointer"
+            className="p-2.5 rounded-full bg-secondary/50 hover:bg-secondary/80 transition cursor-pointer"
             aria-label="Toggle theme"
         >
             {theme === "dark" ? (
@@ -18,7 +18,7 @@ export function ThemeToggle() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-[22px] h-[22px]"
                 >
                     <path
                         strokeLinecap="round"
@@ -33,7 +33,7 @@ export function ThemeToggle() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-[22px] h-[22px]"
                 >
                     <path
                         strokeLinecap="round"
