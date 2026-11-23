@@ -23,16 +23,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         const isDark = document.documentElement.classList.contains("dark");
         setTheme(isDark ? "dark" : "light");
 
-        if (!localStorage.getItem("theme")) {
-            localStorage.setItem("theme", isDark ? "dark" : "light");
-        }
+        // Eski sürümün kendiliğinden kaydettiği tercihi temizle; yalnızca bilinçli seçim saklanır
+        localStorage.removeItem("theme");
     }, []);
 
     const toggleTheme = () => {
         const newTheme = theme === "dark" ? "light" : "dark";
         setTheme(newTheme);
         document.documentElement.classList.toggle("dark");
-        localStorage.setItem("theme", newTheme);
+        localStorage.setItem("site-theme", newTheme);
     };
 
     return (

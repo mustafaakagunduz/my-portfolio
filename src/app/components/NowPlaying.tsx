@@ -6,13 +6,24 @@ import { useEffect, useRef, useState } from "react";
  * Çalma listesi. Yeni şarkı: mp3'ü public/ klasörüne koy, buraya bir satır ekle.
  */
 const TRACKS = [
+    { src: "/erkin-koray-seni-her-gordugumde.mp3", artist: "Erkin Koray", title: "Seni Her Gördüğümde" },
     { src: "/cem-karaca-resimdeki-gozyaslari.mp3", artist: "Cem Karaca", title: "Resimdeki Gözyaşları" },
     { src: "/baris-manco-kol-dugmeleri.mp3", artist: "Barış Manço", title: "Kol Düğmeleri" },
-    { src: "/erkin-koray-seni-her-gordugumde.mp3", artist: "Erkin Koray", title: "Seni Her Gördüğümde" },
 ];
 
 const TARGET_VOLUME = 0.5;
 const MUTED_KEY = "music-muted";
+
+const fmt = (sec: number) => {
+    if (!Number.isFinite(sec) || sec < 0) return "0:00";
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return `${m}:${String(s).padStart(2, "0")}`;
+};
+
+/* İlerleme halkası geometrisi */
+const RING_R = 18;
+const RING_C = 2 * Math.PI * RING_R;
 
 /**
  * Siteye girince listeyi çalar; şarkı bitince sıradakine geçer.
@@ -26,6 +37,8 @@ export function NowPlaying() {
     const [index, setIndex] = useState(0);
     const [playing, setPlaying] = useState(false);
     const [peek, setPeek] = useState(false);
+    const [time, setTime] = useState(0);
+    const [duration, setDuration] = useState(0);
     const track = TRACKS[index];
 
     const fadeTo = (target: number, ms: number, done?: () => void) => {
@@ -63,6 +76,13 @@ export function NowPlaying() {
         audio.addEventListener("play", onPlay);
         audio.addEventListener("pause", onPause);
         audio.addEventListener("ended", onEnded);
+        const onTime = () => setTime(audio.currentTime);
+        const onMeta = () => setDuration(audio.duration);
+        const onEmptied = () => { setTime(0); setDuration(0); };
+        audio.addEventListener("timeupdate", onTime);
+        audio.addEventListener("loadedmetadata", onMeta);
+        audio.addEventListener("durationchange", onMeta);
+        audio.addEventListener("emptied", onEmptied);
 
         const events = ["pointerdown", "keydown", "touchstart", "wheel"] as const;
         const onGesture = (e: Event) => {
@@ -84,6 +104,10 @@ export function NowPlaying() {
             audio.removeEventListener("play", onPlay);
             audio.removeEventListener("pause", onPause);
             audio.removeEventListener("ended", onEnded);
+            audio.removeEventListener("timeupdate", onTime);
+            audio.removeEventListener("loadedmetadata", onMeta);
+            audio.removeEventListener("durationchange", onMeta);
+            audio.removeEventListener("emptied", onEmptied);
             cancelAnimationFrame(fadeRef.current);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -136,7 +160,7 @@ export function NowPlaying() {
         "flex items-center justify-center w-7 h-7 rounded-full text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-colors";
 
     return (
-        <div data-music-toggle className="group/np inline-flex items-center gap-1 rounded-full bg-secondary/50 px-1.5 py-1.5">
+        <div data-music-toggle className="group/np inline-flex items-center gap-1 rounded-full bg-foreground/[0.08] ring-1 ring-foreground/10 dark:bg-secondary/50 dark:ring-0 px-1.5 py-1">
             <audio ref={audioRef} src={track.src} preload="auto" />
 
             <button type="button" onClick={() => skip(-1)} aria-label="Previous track" className={iconBtn}>
@@ -151,8 +175,25 @@ export function NowPlaying() {
                 onClick={toggle}
                 aria-label={playing ? "Pause music" : "Play music"}
                 aria-pressed={playing}
-                className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110"
+                className="group/play relative flex items-center justify-center w-10 h-10"
             >
+                {/* İlerleme halkası */}
+                <svg aria-hidden viewBox="0 0 40 40" className="absolute inset-0 w-full h-full -rotate-90">
+                    <circle cx="20" cy="20" r={RING_R} fill="none" stroke="currentColor" strokeWidth="1.5" className="text-foreground/15" />
+                    <circle
+                        cx="20"
+                        cy="20"
+                        r={RING_R}
+                        fill="none"
+                        stroke="var(--primary)"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_C}
+                        strokeDashoffset={RING_C * (1 - (duration ? Math.min(1, time / duration) : 0))}
+                        style={{ transition: "stroke-dashoffset 0.3s linear" }}
+                    />
+                </svg>
+                <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transition-transform group-hover/play:scale-105">
                 {playing ? (
                     <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor">
                         <rect x="6" y="5" width="4" height="14" rx="1" />
@@ -163,6 +204,7 @@ export function NowPlaying() {
                         <path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z" />
                     </svg>
                 )}
+                </span>
             </button>
 
             <button type="button" onClick={() => skip(1)} aria-label="Next track" className={iconBtn}>
@@ -185,6 +227,9 @@ export function NowPlaying() {
                         style={{ animationDuration: "0.5s" }}
                     >
                         {track.artist} — {track.title}
+                        <span className="ml-3 text-foreground/45 tabular-nums normal-case">
+                            {fmt(time)} / {fmt(duration)}
+                        </span>
                     </span>
                 </span>
             </span>

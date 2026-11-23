@@ -253,7 +253,7 @@ export function RecordCrate() {
                         {current ? (
                             <div key={current.id} className="rise" style={{ animationDuration: "0.5s" }}>
                                 <p className="font-serif text-3xl md:text-4xl leading-none">{current.title[language]}</p>
-                                <p className="text-sm text-foreground/60 mt-2 line-clamp-2">{current.description[language]}</p>
+                                <p className="text-base md:text-lg leading-relaxed text-foreground/75 mt-2 line-clamp-3">{current.description[language]}</p>
                             </div>
                         ) : (
                             <div>
@@ -358,7 +358,7 @@ export function RecordCrate() {
             )}
 
             {/* Yetenek bandı */}
-            <div className="relative z-10 mt-2 shrink-0 border-t border-foreground/15 overflow-hidden group/marquee" aria-label="Skills">
+            <div className="relative z-10 mt-2 shrink-0 overflow-hidden group/marquee" aria-label="Skills">
                 <div className="marquee flex w-max py-4 font-mono text-sm md:text-base uppercase tracking-[0.15em] text-foreground/60 group-hover/marquee:[animation-play-state:paused]">
                     {[0, 1].map((copy) => (
                         <ul key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">
