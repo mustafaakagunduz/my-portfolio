@@ -138,7 +138,7 @@ export function RecordCrate() {
         if (!area || !crate || mode !== "crate") return;
         const measure = () => {
             const w = crate.clientWidth;
-            const h = area.clientHeight - 56 - 96; // zemin cetveli + müzik düğmesi ve boşlukları
+            const h = area.clientHeight - 40 - 56 - 96; // alt boşluk + zemin cetveli + müzik düğmesi ve boşlukları
             const s = Math.round(Math.max(140, Math.min(440, w * 0.32, h / 1.08)));
             setDims({ w, s });
         };
@@ -195,7 +195,7 @@ export function RecordCrate() {
         >
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 {/* Üst satır */}
-                <header className="flex flex-wrap lg:flex-nowrap items-center justify-between gap-x-8 gap-y-3 font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-foreground/60">
+                <header className="flex flex-wrap lg:flex-nowrap items-center justify-between gap-x-8 gap-y-3 font-mono text-xs md:text-sm uppercase tracking-[0.18em] text-foreground">
                     <span className="rise" style={{ animationDelay: "0.05s" }}>
                         <span className="text-foreground">{t["hero.name"]}</span> — {t["hero.title"]}
                     </span>
@@ -252,15 +252,15 @@ export function RecordCrate() {
                     <div className="lg:min-h-[150px] flex flex-col justify-center rise" style={{ animationDelay: "0.35s" }}>
                         {current ? (
                             <div key={current.id} className="rise" style={{ animationDuration: "0.5s" }}>
-                                <p className="font-serif text-3xl md:text-4xl leading-none">{current.title[language]}</p>
-                                <p className="text-base md:text-lg leading-relaxed text-foreground/75 mt-2 line-clamp-3">{current.description[language]}</p>
+                                <p className="text-base md:text-lg leading-relaxed text-foreground line-clamp-3">
+                                    <strong className="font-serif font-normal text-foreground text-[1.35em] leading-none">{current.title[language]}</strong>
+                                    <span className="text-foreground"> – </span>
+                                    {current.description[language]}
+                                </p>
                             </div>
                         ) : (
                             <div>
-                                <p className="text-base md:text-lg leading-relaxed text-foreground/75">{t["about.description"]}</p>
-                                <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/50 mt-4">
-                                    <span className="text-primary">2+</span> {t["about.experience"]} · <span className="text-primary">10+</span> {t["crate.projects"]}
-                                </p>
+                                <p className="text-base md:text-lg leading-relaxed text-foreground">{t["about.description"]}</p>
                             </div>
                         )}
                     </div>
@@ -269,7 +269,7 @@ export function RecordCrate() {
 
             {/* ───── Kasa ───── */}
             {mode === "crate" ? (
-                <div ref={crateAreaRef} className="container mx-auto px-4 md:px-6 relative z-10 flex-1 min-h-0 flex flex-col">
+                <div ref={crateAreaRef} className="container mx-auto px-4 md:px-6 relative z-10 flex-1 min-h-0 flex flex-col pb-10">
                     {/* Müzik: hakkımda bloğu ile plakların tam ortasında */}
                     <div className="flex-1 min-h-[72px] flex items-center justify-center rise" style={{ animationDelay: "0.45s" }}>
                         <NowPlaying />
@@ -313,7 +313,7 @@ export function RecordCrate() {
                     </div>
 
                     {/* Zemin cetveli */}
-                    <div className="relative h-9 border-t border-foreground/20 mt-3 font-mono text-[10px] tracking-[0.2em] text-foreground/40">
+                    <div className="relative h-9 border-t border-foreground/20 mt-3 font-mono text-[10px] tracking-[0.2em] text-foreground">
                         {mounted && w > 0 && projects.map((p, i) => (
                             <span
                                 key={p.id}
@@ -351,7 +351,7 @@ export function RecordCrate() {
                         ))}
                         <div className="shrink-0 w-2" />
                     </div>
-                    <div className="mx-4 md:mx-6 border-t border-foreground/20 py-2 flex justify-between font-mono text-[10px] tracking-[0.2em] uppercase text-foreground/40">
+                    <div className="mx-4 md:mx-6 border-t border-foreground/20 py-2 flex justify-between font-mono text-[10px] tracking-[0.2em] uppercase text-foreground">
                         <span>← {pad(n)} {t["crate.projects"]} →</span>
                     </div>
                 </div>
@@ -359,7 +359,7 @@ export function RecordCrate() {
 
             {/* Yetenek bandı */}
             <div className="relative z-10 mt-2 shrink-0 overflow-hidden group/marquee" aria-label="Skills">
-                <div className="marquee flex w-max py-4 font-mono text-sm md:text-base uppercase tracking-[0.15em] text-foreground/60 group-hover/marquee:[animation-play-state:paused]">
+                <div className="marquee flex w-max py-4 font-mono text-sm md:text-base uppercase tracking-[0.15em] text-foreground group-hover/marquee:[animation-play-state:paused]">
                     {[0, 1].map((copy) => (
                         <ul key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">
                             {SKILLS.map((skill) => (
@@ -443,7 +443,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
             <div className="grain absolute inset-0 pointer-events-none" />
 
             {/* Üst bar */}
-            <div className="absolute top-0 inset-x-0 z-20 flex items-center justify-between px-5 md:px-10 py-6 font-mono text-sm md:text-base uppercase tracking-[0.18em] text-foreground/60">
+            <div className="absolute top-0 inset-x-0 z-20 flex items-center justify-between px-5 md:px-10 py-6 font-mono text-sm md:text-base uppercase tracking-[0.18em] text-foreground">
                 <span>
                     <span className="text-foreground">{pad(index + 1)}</span> / {pad(projects.length)}
                 </span>
@@ -452,7 +452,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                         ref={closeBtn}
                         onClick={requestClose}
                         aria-label={t["crate.close"]}
-                        className="-m-2 p-2 text-foreground/70 hover:text-primary hover:rotate-90 transition-all duration-300 cursor-pointer outline-none focus-visible:text-primary"
+                        className="-m-2 p-2 text-foreground hover:text-primary hover:rotate-90 transition-all duration-300 cursor-pointer outline-none focus-visible:text-primary"
                     >
                         <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round">
                             <path d="M5 5l14 14M19 5L5 19" />
@@ -470,7 +470,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                     key={label}
                     onClick={() => onNavigate(dir)}
                     aria-label={label}
-                    className={`absolute ${side} top-1/2 -translate-y-1/2 z-20 p-3 text-foreground/60 hover:text-primary ${nudge} transition-all duration-300 cursor-pointer`}
+                    className={`absolute ${side} top-1/2 -translate-y-1/2 z-20 p-3 text-foreground hover:text-primary ${nudge} transition-all duration-300 cursor-pointer`}
                 >
                     <svg viewBox="0 0 24 24" className="w-9 h-9 md:w-11 md:h-11" fill="none" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round">
                         <path d={d} />
@@ -498,19 +498,19 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                         <h2 className="font-serif leading-[0.9] tracking-[-0.02em]" style={{ fontSize: "clamp(3rem, 6vw, 6.5rem)", ...delay(0) }}>
                             {project.title[language]}
                         </h2>
-                        <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/75 max-w-xl" style={delay(2)}>
+                        <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground max-w-xl" style={delay(2)}>
                             {project.description[language]}
                         </p>
 
                         {/* Parça listesi = teknolojiler */}
                         <div className="mt-8" style={delay(3)}>
-                            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 mb-3">{t["crate.tracklist"]}</p>
+                            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground mb-3">{t["crate.tracklist"]}</p>
                             <div className="grid grid-cols-2 gap-x-8 border-t border-foreground/15">
                                 {sides.map(([side, list]) => (
                                     <ol key={side}>
                                         {list.map((tech, k) => (
                                             <li key={tech} className="flex items-baseline gap-3 py-2 border-b border-foreground/10 text-sm">
-                                                <span className="font-mono text-[10px] text-foreground/40 w-5">{side}{k + 1}</span>
+                                                <span className="font-mono text-[10px] text-foreground w-5">{side}{k + 1}</span>
                                                 <span>{tech}</span>
                                             </li>
                                         ))}
@@ -539,7 +539,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
 
                         {/* Ekran görüntüleri */}
                         <div className="mt-10" style={delay(5)}>
-                            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 mb-3">
+                            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground mb-3">
                                 {t["crate.screens"]} · {pad(images.length)}
                             </p>
                             <div className="flex gap-3 overflow-x-auto pb-2 [scrollbar-width:thin]">

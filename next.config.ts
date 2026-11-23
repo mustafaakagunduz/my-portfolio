@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
 
 const nextConfig: NextConfig = {
     // SSG Configuration - static export kaldırıldı
@@ -15,4 +16,12 @@ const nextConfig: NextConfig = {
     // assetPrefix: isProd ? 'https://cdn.mustafaakagunduz.com' : '',
 };
 
-export default nextConfig;
+// Dev sunucusu ayrı klasöre yazsın: dev açıkken `next build` alınınca
+// .next silinip dev sunucusu "Internal Server Error" vermesin.
+// Production build (Vercel) varsayılan .next klasörünü kullanmaya devam eder.
+export default function config(phase: string): NextConfig {
+    if (phase === PHASE_DEVELOPMENT_SERVER) {
+        return { ...nextConfig, distDir: ".next-dev" };
+    }
+    return nextConfig;
+}

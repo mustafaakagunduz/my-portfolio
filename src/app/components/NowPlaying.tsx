@@ -38,6 +38,13 @@ export function NowPlaying() {
     const [playing, setPlaying] = useState(false);
     const [peek, setPeek] = useState(false);
     const [time, setTime] = useState(0);
+    const [attention, setAttention] = useState(true);
+
+    // İlk açılışta dikkat çekmek için birkaç kez yanıp sönsün
+    useEffect(() => {
+        const id = window.setTimeout(() => setAttention(false), 4500);
+        return () => window.clearTimeout(id);
+    }, []);
     const [duration, setDuration] = useState(0);
     const track = TRACKS[index];
 
@@ -134,6 +141,7 @@ export function NowPlaying() {
     }, [index]);
 
     const toggle = () => {
+        setAttention(false);
         const audio = audioRef.current;
         if (!audio) return;
         if (audio.paused) {
@@ -157,7 +165,7 @@ export function NowPlaying() {
     };
 
     const iconBtn =
-        "flex items-center justify-center w-7 h-7 rounded-full text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-colors";
+        "flex items-center justify-center w-7 h-7 rounded-full text-foreground hover:text-foreground hover:bg-foreground/10 transition-colors";
 
     return (
         <div data-music-toggle className="group/np inline-flex items-center gap-1 rounded-full bg-foreground/[0.08] ring-1 ring-foreground/10 dark:bg-secondary/50 dark:ring-0 px-1.5 py-1">
@@ -193,7 +201,7 @@ export function NowPlaying() {
                         style={{ transition: "stroke-dashoffset 0.3s linear" }}
                     />
                 </svg>
-                <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transition-transform group-hover/play:scale-105">
+                <span className={`relative flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transition-transform group-hover/play:scale-105 ${attention ? "np-attention" : ""}`}>
                 {playing ? (
                     <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor">
                         <rect x="6" y="5" width="4" height="14" rx="1" />
@@ -223,11 +231,11 @@ export function NowPlaying() {
                 <span className="overflow-hidden">
                     <span
                         key={track.src}
-                        className="rise inline-block pl-2 pr-3 font-mono text-xs uppercase tracking-[0.15em] text-foreground/70 whitespace-nowrap"
+                        className="rise inline-block pl-2 pr-3 font-mono text-xs uppercase tracking-[0.15em] text-foreground whitespace-nowrap"
                         style={{ animationDuration: "0.5s" }}
                     >
                         {track.artist} — {track.title}
-                        <span className="ml-3 text-foreground/45 tabular-nums normal-case">
+                        <span className="ml-3 text-foreground tabular-nums normal-case">
                             {fmt(time)} / {fmt(duration)}
                         </span>
                     </span>

@@ -44,7 +44,7 @@ export function ExperienceDrawer({ onClose }: { onClose: () => void }) {
                             ref={closeBtn}
                             onClick={requestClose}
                             aria-label={t["crate.close"]}
-                            className="-m-2 p-2 shrink-0 text-foreground/70 hover:text-primary hover:rotate-90 transition-all duration-300 outline-none focus-visible:text-primary"
+                            className="-m-2 p-2 shrink-0 text-foreground hover:text-primary hover:rotate-90 transition-all duration-300 outline-none focus-visible:text-primary"
                         >
                             <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round">
                                 <path d="M5 5l14 14M19 5L5 19" />
@@ -53,20 +53,20 @@ export function ExperienceDrawer({ onClose }: { onClose: () => void }) {
                     </div>
 
                     {/* Eğitim */}
-                    <p className="mt-8 mb-4 font-mono text-xs uppercase tracking-[0.25em] text-foreground/55" style={delay(1)}>
+                    <p className="mt-8 mb-4 font-mono text-xs uppercase tracking-[0.25em] text-foreground" style={delay(1)}>
                         {t["crate.education"]}
                     </p>
                     <div style={delay(2)}>
                         {education.map((school) => (
                             <div key={school.name.en} className="border-t border-foreground/15 pt-4">
                                 <p className="font-serif text-[1.75rem] leading-tight">{school.name[language]}</p>
-                                <p className="mt-1 text-base text-foreground/75">{school.degree[language]}</p>
+                                <p className="mt-1 text-base text-foreground">{school.degree[language]}</p>
                             </div>
                         ))}
                     </div>
 
                     {/* İş deneyimi: zaman çizelgesi */}
-                    <p className="mt-10 mb-4 font-mono text-xs uppercase tracking-[0.25em] text-foreground/55" style={delay(3)}>
+                    <p className="mt-10 mb-4 font-mono text-xs uppercase tracking-[0.25em] text-foreground" style={delay(3)}>
                         {t["crate.work"]}
                     </p>
                     <ol className="relative border-l border-foreground/15 ml-1" style={delay(4)}>
@@ -77,13 +77,13 @@ export function ExperienceDrawer({ onClose }: { onClose: () => void }) {
                                         job.current ? "bg-primary border-primary animate-pulse" : "bg-background border-foreground/40"
                                     }`}
                                 />
-                                <p className="font-mono text-xs uppercase tracking-[0.15em] text-foreground/55">{job.period[language]}</p>
+                                <p className="font-mono text-xs uppercase tracking-[0.15em] text-foreground">{job.period[language]}</p>
                                 <p className="mt-1 font-serif text-[1.75rem] leading-tight">
                                     {job.company}
-                                    <span className="text-foreground/40"> · </span>
-                                    <span className="text-[1.05rem] font-sans text-foreground/75">{job.role[language]}</span>
+                                    <span className="text-foreground"> · </span>
+                                    <span className="text-[1.05rem] font-sans text-foreground">{job.role[language]}</span>
                                 </p>
-                                <p className="mt-1.5 text-base leading-relaxed text-foreground/75">{job.summary[language]}</p>
+                                <p className="mt-1.5 text-base leading-relaxed text-foreground">{job.summary[language]}</p>
                             </li>
                         ))}
                     </ol>

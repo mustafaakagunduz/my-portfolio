@@ -298,12 +298,21 @@ html.has-custom-cursor * { cursor: none !important; }
   color: var(--primary-foreground);
 }
 
+/* Çalar: ilk açılışta dikkat çeken yanıp sönme */
+@keyframes np-attention {
+  0%   { transform: scale(1);    box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 75%, transparent); }
+  25%  { transform: scale(1.15); }
+  50%  { transform: scale(1); }
+  100% { transform: scale(1);    box-shadow: 0 0 0 16px color-mix(in oklch, var(--primary) 0%, transparent); }
+}
+.np-attention { animation: np-attention 1.1s ease-out 1s 3; }
+
 /* Yetenek bandı */
 @keyframes marquee { to { transform: translateX(-50%); } }
 .marquee { animation: marquee 60s linear infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee, .drawer-panel, .drawer-backdrop,
+  .marquee, .drawer-panel, .drawer-backdrop, .np-attention,
   .grain::after, .vinyl-spin, .vinyl-spin-slow, .crate-drop, .rise,
   .modal-backdrop, .modal-sleeve, .modal-disc, .modal-panel > * { animation: none !important; }
   .modal-disc { transform: translateX(var(--disc-out, 48%)); }
