@@ -84,7 +84,7 @@ function Sleeve({ project, index, language, active, mono = false }: { project: P
                     draggable={false}
                     className="absolute inset-0 w-full h-full object-cover object-left-top transition-[filter,transform] duration-500"
                     style={{
-                        filter: mono ? "grayscale(1) contrast(1.08)" : active ? "none" : "grayscale(0.85) contrast(1.05) brightness(0.8)",
+                        filter: mono ? "grayscale(1) contrast(1.08)" : active ? "none" : "grayscale(1) contrast(1.05) brightness(0.8)",
                         transform: active ? "scale(1.06)" : "scale(1)",
                     }}
                 />
@@ -345,7 +345,7 @@ export function RecordCrate() {
                                     <div className="absolute top-[3%] left-[3%] w-[94%] h-[94%] -translate-y-[14%]">
                                         <Vinyl index={i} title={project.title[language]} />
                                     </div>
-                                    <Sleeve project={project} index={i} language={language} active />
+                                    <Sleeve project={project} index={i} language={language} active mono />
                                 </div>
                             </button>
                         ))}
