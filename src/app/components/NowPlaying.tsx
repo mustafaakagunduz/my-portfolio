@@ -168,7 +168,7 @@ export function NowPlaying() {
         "flex items-center justify-center w-7 h-7 rounded-full text-foreground hover:text-foreground hover:bg-foreground/10 transition-colors";
 
     return (
-        <div data-music-toggle className="group/np inline-flex items-center gap-1 rounded-full bg-foreground/[0.08] ring-1 ring-foreground/10 dark:bg-secondary/50 dark:ring-0 px-1.5 py-1">
+        <div data-music-toggle className="group/np inline-flex items-center gap-1 rounded-full bg-foreground/[0.08] ring-1 ring-foreground/10 dark:bg-foreground/[0.1] dark:ring-foreground/15 px-1.5 py-1">
             <audio ref={audioRef} src={track.src} preload="auto" />
 
             <button type="button" onClick={() => skip(-1)} aria-label="Previous track" className={iconBtn}>
