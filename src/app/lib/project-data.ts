@@ -12,7 +12,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-    // TODO: Aşağıdaki 7 projenin görselleri (imageUrl/images) eklenecek.
     {
         id: "pilens",
         title: {
@@ -24,7 +23,8 @@ export const projects: Project[] = [
             tr: "Henüz dijitalleşmemiş KOBİ'ler için çok kiracılı bir iş zekâsı ve satış/operasyon platformu: kullanıcı SQL bilmeden kendi Excel/CSV dosyasını yükleyip dakikalar içinde çalışan bir dashboard elde eder. JSON sorgu tanımlarını güvenli SQL'e çeviren bir sorgu motoru; sürükle-bırak panolar, detaya inme, zamanlanmış PDF raporları, eşik alarmları, yalnızca kiracının kendi verisinden cevap veren yapay zekâ asistanı, dinamik rol/yetki yönetimi ve cari, görüşme, fırsat, teklif, proje, sipariş, stok ve ürün kataloğunu kapsayan bir CRM modülü içerir."
         },
         technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "ECharts", "OpenAI API", "Socket.IO", "Cloudflare R2"],
-        images: [],
+        imageUrl: "/pilens-1.webp",
+        images: ["/pilens-1.webp", "/pilens-2.webp", "/pilens-3.webp"],
         demoUrl: "https://pilens.com.tr",
     },
     {
@@ -38,7 +38,8 @@ export const projects: Project[] = [
             tr: "Sanat eserlerinin gezilebilir 3D sanal galerilerde sergilenip satılabildiği, web ve mobilden erişilebilen bir dijital sanat platformu. Sanatçılar panelden kendi sergilerini oluşturup yayınlar; ziyaretçiler odaları birinci şahıs kontrolleri ve çarpışma algılamayla gezer, eşzamanlılığa karşı korumalı satış akışıyla eserlere teklif verir ve canlı ziyaretçi sayısını WebSocket üzerinden görür."
         },
         technologies: ["React Three Fiber", "Three.js", "React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Socket.IO", "React Native"],
-        images: [],
+        imageUrl: "/vea-1.webp",
+        images: ["/vea-1.webp", "/vea-2.webp", "/vea-3.webp", "/vea-4.webp"],
         demoUrl: "https://virtualexhibitionart.com",
     },
     {
@@ -52,7 +53,8 @@ export const projects: Project[] = [
             tr: "ASSİD'in (Ankara Siteler Sanayici ve İş İnsanları Derneği) web platformu ve mobil uygulaması: haberler, etkinlikler, yönetim kurulu ve başkanın mesajı sayfaları ile aranabilir üye firma rehberi içeren kurumsal bir site; online üyelik başvurusu, aidat takibi, mesajlaşma, anlık bildirimler ve PDF belge üretimi sunan üye ve yönetici panelleri."
         },
         technologies: ["NestJS", "React", "React Native", "Expo", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Socket.IO", "Tailwind CSS"],
-        images: [],
+        imageUrl: "/assid-1.webp",
+        images: ["/assid-1.webp", "/assid-2.webp", "/assid-3.webp"],
         demoUrl: "https://assid-frontend-react.vercel.app",
     },
     {
@@ -66,7 +68,8 @@ export const projects: Project[] = [
             tr: "Green Pi Enerji'nin kurumsal web sitesi: GES santrali, AVM, hastane, veri merkezi gibi binaların yer aldığı interaktif bir harita; bir binaya tıklayınca o lokasyona uygun ürünleri listeleyen bir filtre paneli açılır. Ürünler, 3D modeller ve videolar API ve Postgres veritabanına bağlı gizli bir yönetim panelinden yönetilir; medya Cloudinary üzerinden sunulur, VPS'e otomatik deploy edilir."
         },
         technologies: ["React", "TypeScript", "Vite", "Fastify", "PostgreSQL", "Prisma", "GSAP", "Tailwind CSS", "Cloudinary", "Docker"],
-        images: [],
+        imageUrl: "/greenpi-1.webp",
+        images: ["/greenpi-1.webp", "/greenpi-2.webp", "/greenpi-3.webp", "/greenpi-4.webp"],
         demoUrl: "https://greenpi.com.tr",
     },
     {
@@ -80,7 +83,8 @@ export const projects: Project[] = [
             tr: "Yanıcı ve patlayıcı ortamlarda kullanılan ATEX sertifikalı ekipmanlar satan Adanex firmasının iki dilli kurumsal web sitesi. Scroll'a bağlı GSAP animasyonları, yumuşak kaydırma, özel sayfa geçişleri ve özel imleçle ödül seviyesinde bir deneyim hedeflenerek, SEO dostu dil bazlı yönlendirmeyle geliştirildi."
         },
         technologies: ["React", "TypeScript", "Vite", "GSAP", "Lenis", "i18next", "Vercel"],
-        images: [],
+        imageUrl: "/adanex-1.webp",
+        images: ["/adanex-1.webp", "/adanex-2.webp", "/adanex-3.webp", "/adanex-4.webp"],
         demoUrl: "https://adanex.greenpiworks.com",
     },
     {
@@ -94,7 +98,8 @@ export const projects: Project[] = [
             tr: "Ergu Enerji'nin, tam ekran ve gerçek zamanlı bir 3D şehir sahnesiyle açılan iki dilli kurumsal web sitesi. GSAP ile sayfa geçişleri ve animasyonlar, endüstri ve ürünler için iç içe menüler, galeri ve belgeleri yönetmek için bir yönetim paneli içerir; görseller Cloudflare R2'de saklanır."
         },
         technologies: ["React", "TypeScript", "Vite", "React Three Fiber", "Three.js", "GSAP", "Cloudflare R2", "Vercel"],
-        images: [],
+        imageUrl: "/ergu-1.webp",
+        images: ["/ergu-1.webp", "/ergu-2.webp", "/ergu-3.webp"],
         demoUrl: "https://ergu.greenpiworks.com",
     },
     {
@@ -108,7 +113,8 @@ export const projects: Project[] = [
             tr: "Da Vinci Board Game Cafe'nin iki dilli web sitesi: kafeyi tanıtan animasyonlu bir slider, API'den çekilen aylık etkinlik takvimi ve son Instagram paylaşımları, konum ve iletişim bölümleri."
         },
         technologies: ["React", "TypeScript", "Vite", "Framer Motion", "TanStack Query", "Swiper", "i18next"],
-        images: [],
+        imageUrl: "/davinci-1.webp",
+        images: ["/davinci-1.webp", "/davinci-2.webp", "/davinci-3.webp"],
         demoUrl: "https://www.davinciboardgame.com",
     },
     {
