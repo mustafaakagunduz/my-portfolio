@@ -23,8 +23,8 @@ export const projects: Project[] = [
             tr: "Bir CV'nin (metin veya PDF) bir iş ilanına ne kadar uyduğunu analiz eden yapay zekâ destekli bir servis: çok adımlı bir akış önce aday becerilerini ve rol gereksinimlerini çıkarır, sonra OpenAI'ın yapılandırılmış çıktısıyla karşılaştırıp bir uyum skoru, kanıtlı eşleşen beceriler, somut önerili açıklar ve CV madde önerileri üretir."
         },
         technologies: ["ASP.NET Core", "C#", "React", "TypeScript", "OpenAI API", "PdfPig"],
-        imageUrl: "/rolefit-1.png",
-        images: ["/rolefit-1.png", "/rolefit-2.png"],
+        imageUrl: "/rolefit-1.webp",
+        images: ["/rolefit-1.webp", "/rolefit-2.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/RoleFit",
     },
     {
@@ -38,8 +38,8 @@ export const projects: Project[] = [
             tr: "Emlak ofislerinin mülk portföylerini interaktif bir harita üzerinde listeleyip filtreleyebildiği, ekip bazlı erişim ve durum yönetimi sunan bir gayrimenkul yönetim paneli."
         },
         technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Docker"],
-        imageUrl: "/pinorex-1.png",
-        images: ["/pinorex-1.png", "/pinorex-2.png"],
+        imageUrl: "/pinorex-1.webp",
+        images: ["/pinorex-1.webp", "/pinorex-2.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/emlakci-tenant",
     },
     {
@@ -53,8 +53,8 @@ export const projects: Project[] = [
             tr: "Gerçek zamanlı hava aracı takip platformu: simülatör veya canlı OpenSky Network API'sinden gelen konumlar PostGIS'e işlenir, WebSocket üzerinden yayınlanır ve MapLibre haritasında canlı olarak gösterilir; yarıçap araması, uçuş izleri ve filtreler içerir."
         },
         technologies: ["Django", "PostgreSQL", "PostGIS", "Redis", "React", "TypeScript", "MapLibre GL", "Tailwind CSS", "Docker"],
-        imageUrl: "/skytrack-1.png",
-        images: ["/skytrack-1.png", "/skytrack-2.png"],
+        imageUrl: "/skytrack-1.webp",
+        images: ["/skytrack-1.webp", "/skytrack-2.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/sky-track",
     },
     /*{
@@ -68,7 +68,7 @@ export const projects: Project[] = [
             tr: "Yeşil teknoloji alanında faaliyet göstermekte olan DGD Global şirketinin web sayfası"
         },
         technologies: ["Supabase", "Next.js", "React", "TypeScript", "Tailwind CSS", "Resend", "Brevo", "Vercel"],
-        imageUrl: "/dgd.png",
+        imageUrl: "/dgd.webp",
         demoUrl: "https://dgd-taupe.vercel.app",
 
     },*/{
@@ -82,8 +82,8 @@ export const projects: Project[] = [
             tr: "Gerçek zamanlı hava aracı takip uygulaması"
         },
         technologies: ["React", "TypeScript", "Vite", "Express", "WebSocket"],
-        imageUrl: "/aircommand-2.png",
-        images: ["/aircommand-2.png", "/aircommand-1.png"],
+        imageUrl: "/aircommand-2.webp",
+        images: ["/aircommand-2.webp", "/aircommand-1.webp"],
     },
 
     {
@@ -97,8 +97,8 @@ export const projects: Project[] = [
             tr: "Karayolu ve denizyolu taşımacılığında yük sahipleri, taşıyıcılar ve brokerları tek bir platformda buluşturan; teklif, eşleştirme ve süreç yönetimini kolaylaştıran bir lojistik platform."
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "WebSocket", "AWS", "Vercel"],
-        imageUrl: "/transyuk-1.png",
-        images: ["/transyuk-1.png", "/transyuk-2.png", "/transyuk-3.png", "/transyuk-4.png", "/transyuk-5.png", "/transyuk-6.png", "/transyuk-7.png", "/transyuk-8.png"],
+        imageUrl: "/transyuk-1.webp",
+        images: ["/transyuk-1.webp", "/transyuk-2.webp", "/transyuk-3.webp", "/transyuk-4.webp", "/transyuk-5.webp", "/transyuk-6.webp", "/transyuk-7.webp", "/transyuk-8.webp"],
     },
 
     {
@@ -112,8 +112,8 @@ export const projects: Project[] = [
             tr: "Emlak ilanlarının kullanıcı yorumları ve puanlamalarıyla değerlendirildiği; düşük komisyonlu işlem imkânı sunarken topluluk geri bildirimleriyle daha şeffaf ve adil fiyatlandırmayı teşvik eden bir emlak platformu."
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Redis", "Tailwind CSS", "WebSocket", "AWS"],
-        imageUrl: "/encera-1.png",
-        images: ["/encera-1.png", "/encera-2.png","/encera-3.png"],
+        imageUrl: "/encera-1.webp",
+        images: ["/encera-1.webp", "/encera-2.webp","/encera-3.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/encera-be"
     },
 
@@ -128,8 +128,8 @@ export const projects: Project[] = [
             tr: "SkillFit, bireylerin ve şirketlerin günümüzün hızla değişen iş gücü piyasasına uyum sağlamalarına yardımcı olmak için tasarlanmış, yapay zeka destekli yenilikçi bir web platformdur."
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API", "AWS", "Vercel"],
-        imageUrl: "/hrsam.png",
-        images: ["/hrsam.png" , "skillfit-1.png","skillfit-2.png","skillfit-5.png","skillfit-6.png"],
+        imageUrl: "/hrsam.webp",
+        images: ["/hrsam.webp" , "/skillfit-1.webp","/skillfit-2.webp","/skillfit-5.webp","/skillfit-6.webp"],
 
         githubUrl: "https://github.com/mustafaakagunduz/BBM479-BE"
     },{
@@ -143,8 +143,8 @@ export const projects: Project[] = [
             tr: "Kullanıcıların daha önce çözdükleri algoritma sorularını, kendi belirledikleri zorluk seviyelerine göre aralıklı tekrar etmelerine yardımcı olan web uygulaması."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/question.png",
-        images: ["/question.png"],
+        imageUrl: "/question.webp",
+        images: ["/question.webp"],
         demoUrl: "https://question-tracker-seven.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/question-tracker"
     },
@@ -159,8 +159,8 @@ export const projects: Project[] = [
             tr: "Kullanıcıların görevlerini özelleştirilebilir görev kartları veya günlük programlar aracılığıyla (Jira benzeri) düzenlemesine ve takip etmesine olanak tanıyan kişisel bir Kanban tahta uygulaması. Kişisel üretkenlik ve proje yönetiminde yardımcı olur."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/kanban.png",
-        images: ["/kanban.png"],
+        imageUrl: "/kanban.webp",
+        images: ["/kanban.webp"],
         demoUrl: "https://personal-kanban-board.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/personal-kanban-board"
     },
@@ -175,7 +175,7 @@ export const projects: Project[] = [
             tr: "İş ilanlarına göre adayların kişiselleştirilmiş niyet mektupları oluşturmasına yardımcı olan, aynı zamanda işverenlerin adayların belirli iş pozisyonlarına ne kadar uygun olduğunu değerlendirmesine olanak tanıyan yapay zeka destekli bir işe alım süreci uygulaması."
         },
         technologies: ["React", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel"],
-        imageUrl: "/uzgunuz.png",
+        imageUrl: "/uzgunuz.webp",
         demoUrl: "https://www.uzgunuz-fakat.com",
         githubUrl: "https://github.com/mustafaakagunduz/match-app-react"
     },
@@ -190,7 +190,7 @@ export const projects: Project[] = [
             tr: "Kullanıcının konumunu otomatik olarak tespit eden ve bulunduğu konuma ve cinsiyetine göre kıyafet önerileri sunan yapay zeka destekli bir uygulama. Kullanıcıların bulundukları bölgedeki hava koşullarına uygun giyinmelerine yardımcı olur."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel"],
-        imageUrl: "/ww.png",
+        imageUrl: "/ww.webp",
         demoUrl: "https://weather-wear-three.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/weather-wear"
     },
@@ -205,7 +205,7 @@ export const projects: Project[] = [
             tr: "Modern web tasarım ve kullanıcı deneyimi prensiplerini sergileyen konsept bir e-ticaret platformu. Ürün listeleri, arama işlevi, favoriler ve tüm cihazlar için duyarlı bir düzen içerir."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/shopsmart.png",
+        imageUrl: "/shopsmart.webp",
         demoUrl: "https://e-commerce-website-react-xi.vercel.app/favorites",
         githubUrl: "https://github.com/mustafaakagunduz/e-commerce-website-react"
     },
@@ -220,7 +220,7 @@ export const projects: Project[] = [
             tr: "Bir iç mimarlık şirketi için konsept tanıtım web sitesi. Şirketin portföyünü, hizmetlerini ve tasarım felsefesini temiz, modern bir arayüz ve duyarlı tasarımla sergiler."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/spring.png",
+        imageUrl: "/spring.webp",
         demoUrl: "https://interior-design-company-website.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/interior-design-company-website"
     }*/
