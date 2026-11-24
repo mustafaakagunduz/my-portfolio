@@ -5,13 +5,112 @@ export interface Project {
     title: Record<Language, string>;
     description: Record<Language, string>;
     technologies: string[];
-    imageUrl: string;
+    imageUrl?: string;
     images?: string[];
     demoUrl?: string;
     githubUrl?: string;
 }
 
 export const projects: Project[] = [
+    // TODO: Aşağıdaki 7 projenin görselleri (imageUrl/images) eklenecek.
+    {
+        id: "pilens",
+        title: {
+            en: "PiLens",
+            tr: "PiLens",
+        },
+        description: {
+            en: "A multi-tenant business intelligence and sales/operations platform for SMEs that aren't digitalized yet: users upload their own Excel/CSV files and get a working dashboard in minutes, without writing SQL. A secure query engine turns JSON query specs into SQL; it also includes drag-and-drop dashboards, drill-down, scheduled PDF reports, threshold alerts, an AI assistant that answers only from the tenant's own data, dynamic role and permission management, and a CRM module covering accounts, meetings, opportunities, quotes, projects, orders, stock and a product catalog.",
+            tr: "Henüz dijitalleşmemiş KOBİ'ler için çok kiracılı bir iş zekâsı ve satış/operasyon platformu: kullanıcı SQL bilmeden kendi Excel/CSV dosyasını yükleyip dakikalar içinde çalışan bir dashboard elde eder. JSON sorgu tanımlarını güvenli SQL'e çeviren bir sorgu motoru; sürükle-bırak panolar, detaya inme, zamanlanmış PDF raporları, eşik alarmları, yalnızca kiracının kendi verisinden cevap veren yapay zekâ asistanı, dinamik rol/yetki yönetimi ve cari, görüşme, fırsat, teklif, proje, sipariş, stok ve ürün kataloğunu kapsayan bir CRM modülü içerir."
+        },
+        technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "ECharts", "OpenAI API", "Socket.IO", "Cloudflare R2"],
+        images: [],
+        demoUrl: "https://pilens.com.tr",
+    },
+    {
+        id: "vea",
+        title: {
+            en: "Virtual Exhibition Art",
+            tr: "Virtual Exhibition Art",
+        },
+        description: {
+            en: "A digital art platform where artworks are exhibited and sold in explorable 3D virtual galleries, accessible from web and mobile. Artists create and publish their own exhibitions from a panel; visitors walk through the rooms with first-person controls and collision detection, make offers on artworks through a concurrency-safe sales flow, and see live visitor counts over WebSockets.",
+            tr: "Sanat eserlerinin gezilebilir 3D sanal galerilerde sergilenip satılabildiği, web ve mobilden erişilebilen bir dijital sanat platformu. Sanatçılar panelden kendi sergilerini oluşturup yayınlar; ziyaretçiler odaları birinci şahıs kontrolleri ve çarpışma algılamayla gezer, eşzamanlılığa karşı korumalı satış akışıyla eserlere teklif verir ve canlı ziyaretçi sayısını WebSocket üzerinden görür."
+        },
+        technologies: ["React Three Fiber", "Three.js", "React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Socket.IO", "React Native"],
+        images: [],
+        demoUrl: "https://virtualexhibitionart.com",
+    },
+    {
+        id: "assid",
+        title: {
+            en: "ASSİD Association Platform",
+            tr: "ASSİD Dernek Platformu",
+        },
+        description: {
+            en: "The web platform and mobile app of ASSİD (Ankara Siteler Industrialists and Businesspeople Association): a public website with news, events, board and president pages and a searchable member company directory, plus member and admin panels for online membership applications, membership fees, messaging, push notifications and PDF document generation.",
+            tr: "ASSİD'in (Ankara Siteler Sanayici ve İş İnsanları Derneği) web platformu ve mobil uygulaması: haberler, etkinlikler, yönetim kurulu ve başkanın mesajı sayfaları ile aranabilir üye firma rehberi içeren kurumsal bir site; online üyelik başvurusu, aidat takibi, mesajlaşma, anlık bildirimler ve PDF belge üretimi sunan üye ve yönetici panelleri."
+        },
+        technologies: ["NestJS", "React", "React Native", "Expo", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Socket.IO", "Tailwind CSS"],
+        images: [],
+        demoUrl: "https://assid-frontend-react.vercel.app",
+    },
+    {
+        id: "greenpi-enerji",
+        title: {
+            en: "Green Pi Energy Website",
+            tr: "Green Pi Enerji Web Sitesi",
+        },
+        description: {
+            en: "The corporate website of Green Pi Energy: an interactive map of buildings such as solar power plants, malls, hospitals and data centers; clicking a building opens a filter drawer listing products suited to that location. Products, 3D models and videos are managed from a hidden admin panel backed by an API and a Postgres database, with media served via Cloudinary and automatic deployment to a VPS.",
+            tr: "Green Pi Enerji'nin kurumsal web sitesi: GES santrali, AVM, hastane, veri merkezi gibi binaların yer aldığı interaktif bir harita; bir binaya tıklayınca o lokasyona uygun ürünleri listeleyen bir filtre paneli açılır. Ürünler, 3D modeller ve videolar API ve Postgres veritabanına bağlı gizli bir yönetim panelinden yönetilir; medya Cloudinary üzerinden sunulur, VPS'e otomatik deploy edilir."
+        },
+        technologies: ["React", "TypeScript", "Vite", "Fastify", "PostgreSQL", "Prisma", "GSAP", "Tailwind CSS", "Cloudinary", "Docker"],
+        images: [],
+        demoUrl: "https://greenpi.com.tr",
+    },
+    {
+        id: "adanex",
+        title: {
+            en: "Adanex Website",
+            tr: "Adanex Web Sitesi",
+        },
+        description: {
+            en: "The bilingual corporate website of Adanex, a company selling ATEX-certified equipment for flammable and explosive environments. Built for an award-level experience with scroll-driven GSAP animations, smooth scrolling, custom page transitions and a custom cursor, with SEO-friendly language-based routing.",
+            tr: "Yanıcı ve patlayıcı ortamlarda kullanılan ATEX sertifikalı ekipmanlar satan Adanex firmasının iki dilli kurumsal web sitesi. Scroll'a bağlı GSAP animasyonları, yumuşak kaydırma, özel sayfa geçişleri ve özel imleçle ödül seviyesinde bir deneyim hedeflenerek, SEO dostu dil bazlı yönlendirmeyle geliştirildi."
+        },
+        technologies: ["React", "TypeScript", "Vite", "GSAP", "Lenis", "i18next", "Vercel"],
+        images: [],
+        demoUrl: "https://adanex.greenpiworks.com",
+    },
+    {
+        id: "ergu",
+        title: {
+            en: "Ergu Energy Website",
+            tr: "Ergu Enerji Web Sitesi",
+        },
+        description: {
+            en: "The bilingual corporate website of Ergu Energy, opening with a full-screen, real-time 3D city scene. Features GSAP-driven page transitions and animations, nested navigation for industries and products, and an admin panel for managing the gallery and certificates, with images stored on Cloudflare R2.",
+            tr: "Ergu Enerji'nin, tam ekran ve gerçek zamanlı bir 3D şehir sahnesiyle açılan iki dilli kurumsal web sitesi. GSAP ile sayfa geçişleri ve animasyonlar, endüstri ve ürünler için iç içe menüler, galeri ve belgeleri yönetmek için bir yönetim paneli içerir; görseller Cloudflare R2'de saklanır."
+        },
+        technologies: ["React", "TypeScript", "Vite", "React Three Fiber", "Three.js", "GSAP", "Cloudflare R2", "Vercel"],
+        images: [],
+        demoUrl: "https://ergu.greenpiworks.com",
+    },
+    {
+        id: "davinci",
+        title: {
+            en: "Da Vinci Board Game Cafe",
+            tr: "Da Vinci Board Game Cafe",
+        },
+        description: {
+            en: "The bilingual website of Da Vinci Board Game Cafe: an animated hero slider introducing the cafe, the monthly activity calendar and the latest Instagram posts pulled from an API, plus location and contact sections.",
+            tr: "Da Vinci Board Game Cafe'nin iki dilli web sitesi: kafeyi tanıtan animasyonlu bir slider, API'den çekilen aylık etkinlik takvimi ve son Instagram paylaşımları, konum ve iletişim bölümleri."
+        },
+        technologies: ["React", "TypeScript", "Vite", "Framer Motion", "TanStack Query", "Swiper", "i18next"],
+        images: [],
+        demoUrl: "https://www.davinciboardgame.com",
+    },
     {
         id: "rolefit",
         title: {

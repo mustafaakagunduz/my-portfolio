@@ -393,7 +393,7 @@ export function RecordCrate() {
 function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: () => void; onNavigate: (dir: 1 | -1) => void }) {
     const { language, translations: t } = useLanguage();
     const project = projects[index];
-    const images = (project.images ?? [project.imageUrl]).map((src) => (src.startsWith("/") ? src : `/${src}`));
+    const images = (project.images ?? (project.imageUrl ? [project.imageUrl] : [])).map((src) => (src.startsWith("/") ? src : `/${src}`));
     const [closing, setClosing] = useState(false);
     const [shot, setShot] = useState<number | null>(null);
     const closeBtn = useRef<HTMLButtonElement>(null);
@@ -539,7 +539,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                         )}
 
                         {/* Ekran görüntüleri */}
-                        <div className="mt-10" style={delay(5)}>
+                        {images.length > 0 && <div className="mt-10" style={delay(5)}>
                             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground mb-3">
                                 {t["crate.screens"]} · {pad(images.length)}
                             </p>
@@ -552,7 +552,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                                     </button>
                                 ))}
                             </div>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>
