@@ -559,18 +559,38 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
             {/* Tam ekran görsel */}
             {shot !== null && (
                 <div className="modal-backdrop fixed inset-0 z-[60] bg-black/95 flex flex-col items-center justify-center p-4" onClick={() => setShot(null)}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={images[shot]} alt={`${project.title[language]} ${shot + 1}`}
-                         className="max-w-full max-h-[80vh] object-contain" onClick={(e) => e.stopPropagation()} />
-                    <div className="mt-5 flex items-center gap-8 font-mono text-xs tracking-[0.2em] text-white/70" onClick={(e) => e.stopPropagation()}>
+                    <button aria-label={t["crate.close"]} title={t["crate.close"]}
+                            className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 text-white/80 hover:text-primary hover:rotate-90 transition-all duration-300 cursor-pointer"
+                            onClick={(e) => { e.stopPropagation(); setShot(null); }}>
+                        <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round">
+                            <path d="M5 5l14 14M19 5L5 19" />
+                        </svg>
+                    </button>
+                    <div className="flex items-center gap-1 sm:gap-4 max-w-full">
                         {images.length > 1 && (
-                            <button className="hover:text-white cursor-pointer" onClick={() => setShot((shot - 1 + images.length) % images.length)}>←</button>
+                            <button aria-label="Previous"
+                                    className="shrink-0 p-1 sm:p-2 text-white/80 hover:text-primary hover:-translate-x-1 transition-all duration-300 cursor-pointer"
+                                    onClick={(e) => { e.stopPropagation(); setShot((shot - 1 + images.length) % images.length); }}>
+                                <svg viewBox="0 0 24 24" className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16" fill="none" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M15 5l-7 7 7 7" />
+                                </svg>
+                            </button>
                         )}
-                        <span>{pad(shot + 1)} / {pad(images.length)}</span>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={images[shot]} alt={`${project.title[language]} ${shot + 1}`}
+                             className="min-w-0 max-w-full max-h-[80vh] object-contain" onClick={(e) => e.stopPropagation()} />
                         {images.length > 1 && (
-                            <button className="hover:text-white cursor-pointer" onClick={() => setShot((shot + 1) % images.length)}>→</button>
+                            <button aria-label="Next"
+                                    className="shrink-0 p-1 sm:p-2 text-white/80 hover:text-primary hover:translate-x-1 transition-all duration-300 cursor-pointer"
+                                    onClick={(e) => { e.stopPropagation(); setShot((shot + 1) % images.length); }}>
+                                <svg viewBox="0 0 24 24" className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16" fill="none" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
                         )}
-                        <button className="hover:text-white cursor-pointer ml-4" onClick={() => setShot(null)}>{t["crate.close"]} ✕</button>
+                    </div>
+                    <div className="mt-5 font-mono text-xs tracking-[0.2em] text-white/70" onClick={(e) => e.stopPropagation()}>
+                        {pad(shot + 1)} / {pad(images.length)}
                     </div>
                 </div>
             )}
