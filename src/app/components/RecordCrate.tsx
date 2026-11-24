@@ -16,10 +16,9 @@ const LINKS = [
 ];
 
 const SKILLS = [
-    "Spring Boot", "Java", "Next.js", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "PostGIS",
-    "Redis", "Docker", "Python", "Django", "GeoDjango", "Django Channels", "GraphQL", "WebSocket",
-    "REST API", "AWS", "Supabase", "Firebase", "Express", "Vite", "MapLibre GL", "Zustand",
-    "GitHub Actions", "Vercel", "Resend",
+    "Spring Boot", "Java", "NestJS", "React", "TypeScript", "Three.js", "React Three Fiber", "PostgreSQL", "Redis", "Docker", "Python",
+    "Django", "GraphQL", "WebSocket", "REST API", "Supabase", "Vite", "MapLibre GL",
+    "GitHub Actions", "Vercel",
 ];
 
 /* Tüm plakların etiket rengi: sitenin vurgu rengi */
@@ -481,10 +480,10 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
 
             {/* İçerik */}
             <div className="relative z-10 h-full overflow-y-auto overscroll-contain" onClick={(e) => e.target === e.currentTarget && requestClose()}>
-                <div className="min-h-full container mx-auto px-5 md:px-10 pt-24 pb-16 grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-12 lg:gap-16 items-center pointer-events-none [&>*]:pointer-events-auto">
+                <div className="min-h-full container mx-auto px-5 md:px-10 pt-24 pb-16 lg:pt-20 lg:pb-10 grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-12 lg:gap-16 items-center pointer-events-none [&>*]:pointer-events-auto">
                     {/* Sol: kılıf + dışarı çıkan plak */}
                     <div className="w-full">
-                    <div className="relative w-[62%] lg:w-[64%] max-w-[480px] aspect-square mx-auto lg:mx-0" style={{ ["--disc-out" as string]: "52%" }}>
+                    <div className="relative w-[62%] lg:w-[64%] max-w-[480px] lg:max-w-[min(480px,62vh)] aspect-square mx-auto lg:mx-0" style={{ ["--disc-out" as string]: "52%" }}>
                         <div className="modal-disc absolute top-[2%] left-[2%] w-[96%] h-[96%]">
                             <Vinyl index={index} title={project.title[language]} spinning />
                         </div>
@@ -496,21 +495,21 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
 
                     {/* Sağ: bilgi paneli */}
                     <div className="modal-panel">
-                        <h2 className="font-serif leading-[0.9] tracking-[-0.02em]" style={{ fontSize: "clamp(3rem, 6vw, 6.5rem)", ...delay(0) }}>
+                        <h2 className="font-serif leading-[0.9] tracking-[-0.02em]" style={{ fontSize: "clamp(2.75rem, min(6vw, 9vh), 6.5rem)", ...delay(0) }}>
                             {project.title[language]}
                         </h2>
-                        <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground max-w-xl" style={delay(2)}>
+                        <p className="mt-6 lg:mt-[2.5vh] text-base md:text-lg lg:text-[clamp(0.95rem,1.9vh,1.125rem)] leading-relaxed text-foreground max-w-xl lg:max-w-2xl" style={delay(2)}>
                             {project.description[language]}
                         </p>
 
                         {/* Parça listesi = teknolojiler */}
-                        <div className="mt-8" style={delay(3)}>
+                        <div className="mt-8 lg:mt-[3vh]" style={delay(3)}>
                             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground mb-3">{t["crate.tracklist"]}</p>
                             <div className="grid grid-cols-2 gap-x-8 border-t border-foreground/15">
                                 {sides.map(([side, list]) => (
                                     <ol key={side}>
                                         {list.map((tech, k) => (
-                                            <li key={tech} className="flex items-baseline gap-3 py-2 border-b border-foreground/10 text-sm">
+                                            <li key={tech} className="flex items-baseline gap-3 py-2 lg:py-[0.6vh] border-b border-foreground/10 text-sm">
                                                 <span className="font-mono text-[10px] text-foreground w-5">{side}{k + 1}</span>
                                                 <span>{tech}</span>
                                             </li>
@@ -522,7 +521,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
 
                         {/* Bağlantılar */}
                         {(project.githubUrl || project.demoUrl) && (
-                            <div className="mt-8 flex flex-wrap gap-3" style={delay(4)}>
+                            <div className="mt-8 lg:mt-[3vh] flex flex-wrap gap-3" style={delay(4)}>
                                 {project.demoUrl && (
                                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer"
                                        className="group inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] hover:gap-5 transition-all">
@@ -539,14 +538,14 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                         )}
 
                         {/* Ekran görüntüleri */}
-                        {images.length > 0 && <div className="mt-10" style={delay(5)}>
+                        {images.length > 0 && <div className="mt-10 lg:mt-[3vh]" style={delay(5)}>
                             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground mb-3">
                                 {t["crate.screens"]} · {pad(images.length)}
                             </p>
                             <div className="flex gap-3 overflow-x-auto pb-2 [scrollbar-width:thin]">
                                 {images.map((src, k) => (
                                     <button key={src} onClick={() => setShot(k)}
-                                            className="shrink-0 w-36 aspect-video overflow-hidden border border-foreground/15 hover:border-primary transition-colors cursor-zoom-in">
+                                            className="shrink-0 w-36 lg:w-[clamp(7rem,14vh,9rem)] aspect-video overflow-hidden border border-foreground/15 hover:border-primary transition-colors cursor-zoom-in">
                                         {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img src={src} alt={`${project.title[language]} ${k + 1}`} className="w-full h-full object-cover grayscale contrast-[1.08] hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     </button>

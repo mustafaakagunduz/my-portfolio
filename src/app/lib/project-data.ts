@@ -23,8 +23,8 @@ export const projects: Project[] = [
             tr: "Henüz dijitalleşmemiş KOBİ'ler için çok kiracılı bir iş zekâsı ve satış/operasyon platformu: kullanıcı SQL bilmeden kendi Excel/CSV dosyasını yükleyip dakikalar içinde çalışan bir dashboard elde eder. JSON sorgu tanımlarını güvenli SQL'e çeviren bir sorgu motoru; sürükle-bırak panolar, detaya inme, zamanlanmış PDF raporları, eşik alarmları, yalnızca kiracının kendi verisinden cevap veren yapay zekâ asistanı, dinamik rol/yetki yönetimi ve cari, görüşme, fırsat, teklif, proje, sipariş, stok ve ürün kataloğunu kapsayan bir CRM modülü içerir."
         },
         technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "ECharts", "OpenAI API", "Socket.IO", "Cloudflare R2"],
-        imageUrl: "/pilens-1.webp",
-        images: ["/pilens-1.webp", "/pilens-2.webp", "/pilens-3.webp"],
+        imageUrl: "/projects/pilens/pilens-1.webp",
+        images: ["/projects/pilens/pilens-1.webp", "/projects/pilens/pilens-2.webp", "/projects/pilens/pilens-3.webp"],
         demoUrl: "https://pilens.com.tr",
     },
     {
@@ -38,8 +38,8 @@ export const projects: Project[] = [
             tr: "Sanat eserlerinin gezilebilir 3D sanal galerilerde sergilenip satılabildiği, web ve mobilden erişilebilen bir dijital sanat platformu. Sanatçılar panelden kendi sergilerini oluşturup yayınlar; ziyaretçiler odaları birinci şahıs kontrolleri ve çarpışma algılamayla gezer, eşzamanlılığa karşı korumalı satış akışıyla eserlere teklif verir ve canlı ziyaretçi sayısını WebSocket üzerinden görür."
         },
         technologies: ["React Three Fiber", "Three.js", "React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Socket.IO", "React Native"],
-        imageUrl: "/vea-1.webp",
-        images: ["/vea-1.webp", "/vea-2.webp", "/vea-3.webp", "/vea-4.webp"],
+        imageUrl: "/projects/virtual-exhibition-art/vea-1.webp",
+        images: ["/projects/virtual-exhibition-art/vea-1.webp", "/projects/virtual-exhibition-art/vea-2.webp", "/projects/virtual-exhibition-art/vea-3.webp", "/projects/virtual-exhibition-art/vea-4.webp"],
         demoUrl: "https://virtualexhibitionart.com",
     },
     {
@@ -53,8 +53,8 @@ export const projects: Project[] = [
             tr: "ASSİD'in (Ankara Siteler Sanayici ve İş İnsanları Derneği) web platformu ve mobil uygulaması: haberler, etkinlikler, yönetim kurulu ve başkanın mesajı sayfaları ile aranabilir üye firma rehberi içeren kurumsal bir site; online üyelik başvurusu, aidat takibi, mesajlaşma, anlık bildirimler ve PDF belge üretimi sunan üye ve yönetici panelleri."
         },
         technologies: ["NestJS", "React", "React Native", "Expo", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Socket.IO", "Tailwind CSS"],
-        imageUrl: "/assid-1.webp",
-        images: ["/assid-1.webp", "/assid-2.webp", "/assid-3.webp"],
+        imageUrl: "/projects/assid/assid-1.webp",
+        images: ["/projects/assid/assid-1.webp", "/projects/assid/assid-2.webp", "/projects/assid/assid-3.webp"],
         demoUrl: "https://assid-frontend-react.vercel.app",
     },
     {
@@ -68,8 +68,8 @@ export const projects: Project[] = [
             tr: "Green Pi Enerji'nin kurumsal web sitesi: GES santrali, AVM, hastane, veri merkezi gibi binaların yer aldığı interaktif bir harita; bir binaya tıklayınca o lokasyona uygun ürünleri listeleyen bir filtre paneli açılır. Ürünler, 3D modeller ve videolar API ve Postgres veritabanına bağlı gizli bir yönetim panelinden yönetilir; medya Cloudinary üzerinden sunulur, VPS'e otomatik deploy edilir."
         },
         technologies: ["React", "TypeScript", "Vite", "Fastify", "PostgreSQL", "Prisma", "GSAP", "Tailwind CSS", "Cloudinary", "Docker"],
-        imageUrl: "/greenpi-1.webp",
-        images: ["/greenpi-1.webp", "/greenpi-2.webp", "/greenpi-3.webp", "/greenpi-4.webp"],
+        imageUrl: "/projects/greenpi/greenpi-1.webp",
+        images: ["/projects/greenpi/greenpi-1.webp", "/projects/greenpi/greenpi-2.webp", "/projects/greenpi/greenpi-3.webp", "/projects/greenpi/greenpi-4.webp"],
         demoUrl: "https://greenpi.com.tr",
     },
     {
@@ -83,8 +83,8 @@ export const projects: Project[] = [
             tr: "Yanıcı ve patlayıcı ortamlarda kullanılan ATEX sertifikalı ekipmanlar satan Adanex firmasının iki dilli kurumsal web sitesi. Scroll'a bağlı GSAP animasyonları, yumuşak kaydırma, özel sayfa geçişleri ve özel imleçle ödül seviyesinde bir deneyim hedeflenerek, SEO dostu dil bazlı yönlendirmeyle geliştirildi."
         },
         technologies: ["React", "TypeScript", "Vite", "GSAP", "Lenis", "i18next", "Vercel"],
-        imageUrl: "/adanex-1.webp",
-        images: ["/adanex-1.webp", "/adanex-2.webp", "/adanex-3.webp", "/adanex-4.webp"],
+        imageUrl: "/projects/adanex/adanex-1.webp",
+        images: ["/projects/adanex/adanex-1.webp", "/projects/adanex/adanex-2.webp", "/projects/adanex/adanex-3.webp", "/projects/adanex/adanex-4.webp"],
         demoUrl: "https://adanex.greenpiworks.com",
     },
     {
@@ -98,8 +98,8 @@ export const projects: Project[] = [
             tr: "Ergu Enerji'nin, tam ekran ve gerçek zamanlı bir 3D şehir sahnesiyle açılan iki dilli kurumsal web sitesi. GSAP ile sayfa geçişleri ve animasyonlar, endüstri ve ürünler için iç içe menüler, galeri ve belgeleri yönetmek için bir yönetim paneli içerir; görseller Cloudflare R2'de saklanır."
         },
         technologies: ["React", "TypeScript", "Vite", "React Three Fiber", "Three.js", "GSAP", "Cloudflare R2", "Vercel"],
-        imageUrl: "/ergu-1.webp",
-        images: ["/ergu-1.webp", "/ergu-2.webp", "/ergu-3.webp"],
+        imageUrl: "/projects/ergu/ergu-1.webp",
+        images: ["/projects/ergu/ergu-1.webp", "/projects/ergu/ergu-2.webp", "/projects/ergu/ergu-3.webp"],
         demoUrl: "https://ergu.greenpiworks.com",
     },
     {
@@ -113,8 +113,8 @@ export const projects: Project[] = [
             tr: "Da Vinci Board Game Cafe'nin iki dilli web sitesi: kafeyi tanıtan animasyonlu bir slider, API'den çekilen aylık etkinlik takvimi ve son Instagram paylaşımları, konum ve iletişim bölümleri."
         },
         technologies: ["React", "TypeScript", "Vite", "Framer Motion", "TanStack Query", "Swiper", "i18next"],
-        imageUrl: "/davinci-1.webp",
-        images: ["/davinci-1.webp", "/davinci-2.webp", "/davinci-3.webp"],
+        imageUrl: "/projects/davinci/davinci-1.webp",
+        images: ["/projects/davinci/davinci-1.webp", "/projects/davinci/davinci-2.webp", "/projects/davinci/davinci-3.webp"],
         demoUrl: "https://www.davinciboardgame.com",
     },
     {
@@ -128,8 +128,8 @@ export const projects: Project[] = [
             tr: "Bir CV'nin (metin veya PDF) bir iş ilanına ne kadar uyduğunu analiz eden yapay zekâ destekli bir servis: çok adımlı bir akış önce aday becerilerini ve rol gereksinimlerini çıkarır, sonra OpenAI'ın yapılandırılmış çıktısıyla karşılaştırıp bir uyum skoru, kanıtlı eşleşen beceriler, somut önerili açıklar ve CV madde önerileri üretir."
         },
         technologies: ["ASP.NET Core", "C#", "React", "TypeScript", "OpenAI API", "PdfPig"],
-        imageUrl: "/rolefit-1.webp",
-        images: ["/rolefit-1.webp", "/rolefit-2.webp"],
+        imageUrl: "/projects/rolefit/rolefit-1.webp",
+        images: ["/projects/rolefit/rolefit-1.webp", "/projects/rolefit/rolefit-2.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/RoleFit",
     },
     {
@@ -143,8 +143,8 @@ export const projects: Project[] = [
             tr: "Emlak ofislerinin mülk portföylerini interaktif bir harita üzerinde listeleyip filtreleyebildiği, ekip bazlı erişim ve durum yönetimi sunan bir gayrimenkul yönetim paneli."
         },
         technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Docker"],
-        imageUrl: "/pinorex-1.webp",
-        images: ["/pinorex-1.webp", "/pinorex-2.webp"],
+        imageUrl: "/projects/pinorex/pinorex-1.webp",
+        images: ["/projects/pinorex/pinorex-1.webp", "/projects/pinorex/pinorex-2.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/emlakci-tenant",
     },
     {
@@ -158,8 +158,8 @@ export const projects: Project[] = [
             tr: "Gerçek zamanlı hava aracı takip platformu: simülatör veya canlı OpenSky Network API'sinden gelen konumlar PostGIS'e işlenir, WebSocket üzerinden yayınlanır ve MapLibre haritasında canlı olarak gösterilir; yarıçap araması, uçuş izleri ve filtreler içerir."
         },
         technologies: ["Django", "PostgreSQL", "PostGIS", "Redis", "React", "TypeScript", "MapLibre GL", "Tailwind CSS", "Docker"],
-        imageUrl: "/skytrack-1.webp",
-        images: ["/skytrack-1.webp", "/skytrack-2.webp"],
+        imageUrl: "/projects/skytrack/skytrack-1.webp",
+        images: ["/projects/skytrack/skytrack-1.webp", "/projects/skytrack/skytrack-2.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/sky-track",
     },
     /*{
@@ -173,7 +173,7 @@ export const projects: Project[] = [
             tr: "Yeşil teknoloji alanında faaliyet göstermekte olan DGD Global şirketinin web sayfası"
         },
         technologies: ["Supabase", "Next.js", "React", "TypeScript", "Tailwind CSS", "Resend", "Brevo", "Vercel"],
-        imageUrl: "/dgd.webp",
+        imageUrl: "/projects/dgd/dgd.webp",
         demoUrl: "https://dgd-taupe.vercel.app",
 
     },*/{
@@ -187,8 +187,8 @@ export const projects: Project[] = [
             tr: "Gerçek zamanlı hava aracı takip uygulaması"
         },
         technologies: ["React", "TypeScript", "Vite", "Express", "WebSocket"],
-        imageUrl: "/aircommand-2.webp",
-        images: ["/aircommand-2.webp", "/aircommand-1.webp"],
+        imageUrl: "/projects/air-guard/aircommand-2.webp",
+        images: ["/projects/air-guard/aircommand-2.webp", "/projects/air-guard/aircommand-1.webp"],
     },
 
     {
@@ -202,8 +202,8 @@ export const projects: Project[] = [
             tr: "Karayolu ve denizyolu taşımacılığında yük sahipleri, taşıyıcılar ve brokerları tek bir platformda buluşturan; teklif, eşleştirme ve süreç yönetimini kolaylaştıran bir lojistik platform."
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "WebSocket", "AWS", "Vercel"],
-        imageUrl: "/transyuk-1.webp",
-        images: ["/transyuk-1.webp", "/transyuk-2.webp", "/transyuk-3.webp", "/transyuk-4.webp", "/transyuk-5.webp", "/transyuk-6.webp", "/transyuk-7.webp", "/transyuk-8.webp"],
+        imageUrl: "/projects/transyuk/transyuk-1.webp",
+        images: ["/projects/transyuk/transyuk-1.webp", "/projects/transyuk/transyuk-2.webp", "/projects/transyuk/transyuk-3.webp", "/projects/transyuk/transyuk-4.webp", "/projects/transyuk/transyuk-5.webp", "/projects/transyuk/transyuk-6.webp", "/projects/transyuk/transyuk-7.webp", "/projects/transyuk/transyuk-8.webp"],
     },
 
     {
@@ -217,8 +217,8 @@ export const projects: Project[] = [
             tr: "Emlak ilanlarının kullanıcı yorumları ve puanlamalarıyla değerlendirildiği; düşük komisyonlu işlem imkânı sunarken topluluk geri bildirimleriyle daha şeffaf ve adil fiyatlandırmayı teşvik eden bir emlak platformu."
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Redis", "Tailwind CSS", "WebSocket", "AWS"],
-        imageUrl: "/encera-1.webp",
-        images: ["/encera-1.webp", "/encera-2.webp","/encera-3.webp"],
+        imageUrl: "/projects/encera/encera-1.webp",
+        images: ["/projects/encera/encera-1.webp", "/projects/encera/encera-2.webp","/projects/encera/encera-3.webp"],
         githubUrl: "https://github.com/mustafaakagunduz/encera-be"
     },
 
@@ -233,8 +233,8 @@ export const projects: Project[] = [
             tr: "SkillFit, bireylerin ve şirketlerin günümüzün hızla değişen iş gücü piyasasına uyum sağlamalarına yardımcı olmak için tasarlanmış, yapay zeka destekli yenilikçi bir web platformdur."
         },
         technologies: ["Spring Boot", "Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API", "AWS", "Vercel"],
-        imageUrl: "/hrsam.webp",
-        images: ["/hrsam.webp" , "/skillfit-1.webp","/skillfit-2.webp","/skillfit-5.webp","/skillfit-6.webp"],
+        imageUrl: "/projects/skillfit/hrsam.webp",
+        images: ["/projects/skillfit/hrsam.webp" , "/projects/skillfit/skillfit-1.webp","/projects/skillfit/skillfit-2.webp","/projects/skillfit/skillfit-5.webp","/projects/skillfit/skillfit-6.webp"],
 
         githubUrl: "https://github.com/mustafaakagunduz/BBM479-BE"
     },{
@@ -248,8 +248,8 @@ export const projects: Project[] = [
             tr: "Kullanıcıların daha önce çözdükleri algoritma sorularını, kendi belirledikleri zorluk seviyelerine göre aralıklı tekrar etmelerine yardımcı olan web uygulaması."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/question.webp",
-        images: ["/question.webp"],
+        imageUrl: "/projects/question-tracker/question.webp",
+        images: ["/projects/question-tracker/question.webp"],
         demoUrl: "https://question-tracker-seven.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/question-tracker"
     },
@@ -264,8 +264,8 @@ export const projects: Project[] = [
             tr: "Kullanıcıların görevlerini özelleştirilebilir görev kartları veya günlük programlar aracılığıyla (Jira benzeri) düzenlemesine ve takip etmesine olanak tanıyan kişisel bir Kanban tahta uygulaması. Kişisel üretkenlik ve proje yönetiminde yardımcı olur."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/kanban.webp",
-        images: ["/kanban.webp"],
+        imageUrl: "/projects/kanban/kanban.webp",
+        images: ["/projects/kanban/kanban.webp"],
         demoUrl: "https://personal-kanban-board.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/personal-kanban-board"
     },
@@ -280,7 +280,7 @@ export const projects: Project[] = [
             tr: "İş ilanlarına göre adayların kişiselleştirilmiş niyet mektupları oluşturmasına yardımcı olan, aynı zamanda işverenlerin adayların belirli iş pozisyonlarına ne kadar uygun olduğunu değerlendirmesine olanak tanıyan yapay zeka destekli bir işe alım süreci uygulaması."
         },
         technologies: ["React", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel"],
-        imageUrl: "/uzgunuz.webp",
+        imageUrl: "/projects/uzgunuz/uzgunuz.webp",
         demoUrl: "https://www.uzgunuz-fakat.com",
         githubUrl: "https://github.com/mustafaakagunduz/match-app-react"
     },
@@ -295,7 +295,7 @@ export const projects: Project[] = [
             tr: "Kullanıcının konumunu otomatik olarak tespit eden ve bulunduğu konuma ve cinsiyetine göre kıyafet önerileri sunan yapay zeka destekli bir uygulama. Kullanıcıların bulundukları bölgedeki hava koşullarına uygun giyinmelerine yardımcı olur."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel"],
-        imageUrl: "/ww.webp",
+        imageUrl: "/projects/weather-wear/ww.webp",
         demoUrl: "https://weather-wear-three.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/weather-wear"
     },
@@ -310,7 +310,7 @@ export const projects: Project[] = [
             tr: "Modern web tasarım ve kullanıcı deneyimi prensiplerini sergileyen konsept bir e-ticaret platformu. Ürün listeleri, arama işlevi, favoriler ve tüm cihazlar için duyarlı bir düzen içerir."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/shopsmart.webp",
+        imageUrl: "/projects/shopsmart/shopsmart.webp",
         demoUrl: "https://e-commerce-website-react-xi.vercel.app/favorites",
         githubUrl: "https://github.com/mustafaakagunduz/e-commerce-website-react"
     },
@@ -325,7 +325,7 @@ export const projects: Project[] = [
             tr: "Bir iç mimarlık şirketi için konsept tanıtım web sitesi. Şirketin portföyünü, hizmetlerini ve tasarım felsefesini temiz, modern bir arayüz ve duyarlı tasarımla sergiler."
         },
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        imageUrl: "/spring.webp",
+        imageUrl: "/projects/spring-concepts/spring.webp",
         demoUrl: "https://interior-design-company-website.vercel.app",
         githubUrl: "https://github.com/mustafaakagunduz/interior-design-company-website"
     }*/
