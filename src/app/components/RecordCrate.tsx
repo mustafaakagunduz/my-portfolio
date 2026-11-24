@@ -98,7 +98,7 @@ function Sleeve({ project, index, language, active, mono = false }: { project: P
             </div>
             <div className="absolute bottom-4 left-5 right-4 text-white">
                 <p className="font-serif text-[clamp(1.4rem,2.2vw,2.2rem)] leading-[0.95]">{project.title[language]}</p>
-                <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/60 mt-2 truncate">
+                <p lang="en" className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/60 mt-2 truncate">
                     {project.technologies.slice(0, 3).join(" · ")}
                 </p>
             </div>
@@ -203,6 +203,7 @@ export function RecordCrate() {
                         {LINKS.map((l) => (
                             <a
                                 key={l.key}
+                                lang="en"
                                 href={l.href}
                                 {...(l.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                                 className="group inline-flex items-center gap-1 hover:text-foreground transition-colors"
@@ -358,7 +359,7 @@ export function RecordCrate() {
             )}
 
             {/* Yetenek bandı */}
-            <div className="relative z-10 mt-2 shrink-0 overflow-hidden group/marquee" aria-label="Skills">
+            <div lang="en" className="relative z-10 mt-2 shrink-0 overflow-hidden group/marquee" aria-label="Skills">
                 <div className="marquee flex w-max py-4 font-mono text-sm md:text-base uppercase tracking-[0.15em] text-foreground group-hover/marquee:[animation-play-state:paused]">
                     {[0, 1].map((copy) => (
                         <ul key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">
@@ -529,7 +530,7 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                                     </a>
                                 )}
                                 {project.githubUrl && (
-                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" lang="en"
                                        className="group inline-flex items-center gap-3 rounded-full border border-foreground/30 px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] hover:border-primary hover:text-primary hover:gap-5 transition-all">
                                         {t["projects.github"]} <span>↗</span>
                                     </a>

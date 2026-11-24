@@ -231,6 +231,7 @@ export function NowPlaying() {
                 <span className="overflow-hidden">
                     <span
                         key={track.src}
+                        lang="tr"
                         className="rise inline-block pl-2 pr-3 font-mono text-xs uppercase tracking-[0.15em] text-foreground whitespace-nowrap"
                         style={{ animationDuration: "0.5s" }}
                     >

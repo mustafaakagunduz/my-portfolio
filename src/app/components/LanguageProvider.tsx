@@ -28,6 +28,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         }
     }, []);
 
+    // CSS uppercase dile göre büyütür: lang="tr" olmazsa "i" → "I" olur, "İ" değil
+    useEffect(() => {
+        document.documentElement.lang = language;
+    }, [language]);
+
     const changeLanguage = (lang: Language) => {
         setLanguage(lang);
         localStorage.setItem("language", lang);
