@@ -30,12 +30,12 @@ type Mode = "crate" | "strip";
 
 /* ─────────────────────────── Plak (disk) ─────────────────────────── */
 
-function Vinyl({ index, title, spinning = false, playing }: { index: number; title: string; spinning?: boolean; playing?: boolean }) {
+function Vinyl({ index, title, spinning = false, playing, lit = false }: { index: number; title: string; spinning?: boolean; playing?: boolean; lit?: boolean }) {
     // playing verilirse: yavaş dönüş, durunca olduğu açıda kalır (başa sıçramaz)
     const slow = playing !== undefined;
     const ringId = useId();
     return (
-        <div className="vinyl absolute inset-0">
+        <div className={`vinyl absolute inset-0 ${lit ? "vinyl-lit" : ""}`}>
             {/* Dönen kısım: oluklar + etiket */}
             <div
                 className={`vinyl-disc absolute inset-0 rounded-full ${spinning ? "vinyl-spin" : ""} ${slow ? "vinyl-spin-slow" : ""}`}
@@ -72,7 +72,7 @@ function Vinyl({ index, title, spinning = false, playing }: { index: number; tit
 
 /* ─────────────────────────── Kapak ─────────────────────────── */
 
-function Sleeve({ project, index, language, active, mono = false }: { project: Project; index: number; language: "en" | "tr"; active: boolean; mono?: boolean }) {
+function Sleeve({ project, index, language, active, mono = false, dimmed = false }: { project: Project; index: number; language: "en" | "tr"; active: boolean; mono?: boolean; dimmed?: boolean }) {
     return (
         <div className="absolute inset-0 overflow-hidden bg-neutral-900 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.55)]">
             {project.imageUrl && (
@@ -103,6 +103,11 @@ function Sleeve({ project, index, language, active, mono = false }: { project: P
             </div>
             {/* Karton dokusu / parlama */}
             <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(115deg,transparent_40%,rgba(255,255,255,0.08)_50%,transparent_60%)]" />
+            {/* Başka plak seçiliyken geri plana çekilir: üstüne çıkan siyah plak belirgin olsun */}
+            <div
+                className="absolute inset-0 pointer-events-none bg-[#0a0a0a] transition-opacity duration-500"
+                style={{ opacity: dimmed ? 0.62 : 0 }}
+            />
         </div>
     );
 }
@@ -303,9 +308,9 @@ export function RecordCrate() {
                                         className="absolute top-[3%] left-[3%] w-[94%] h-[94%] transition-transform duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
                                         style={{ transform: active ? "translateX(24%)" : "translateX(0)" }}
                                     >
-                                        <Vinyl index={i} title={project.title[language]} playing={active} />
+                                        <Vinyl index={i} title={project.title[language]} playing={active} lit={active} />
                                     </div>
-                                    <Sleeve project={project} index={i} language={language} active={active} />
+                                    <Sleeve project={project} index={i} language={language} active={active} dimmed={isHovering && !active} />
                                   </div>
                                 </button>
                             );
