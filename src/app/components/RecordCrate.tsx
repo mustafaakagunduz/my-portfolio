@@ -30,10 +30,14 @@ type Mode = "crate" | "strip";
 
 /* ─────────────────────────── Plak (disk) ─────────────────────────── */
 
-function Vinyl({ index, title, spinning = false, playing, lit = false }: { index: number; title: string; spinning?: boolean; playing?: boolean; lit?: boolean }) {
+function Vinyl({ index, title, spinning = false, playing, lit = false, caption = false }: { index: number; title: string; spinning?: boolean; playing?: boolean; lit?: boolean; caption?: boolean }) {
     // playing verilirse: yavaş dönüş, durunca olduğu açıda kalır (başa sıçramaz)
     const slow = playing !== undefined;
     const ringId = useId();
+    // caption: etiketin çevresine proje adı tekrar tekrar yazılır; plak kılıfta yarı gizliyken de dönerek okunur
+    const ringText = caption
+        ? Array.from({ length: Math.max(1, Math.ceil(40 / (title.trim().length + 3))) }, () => `${title.trim()} · `).join("")
+        : `${catalogNo(index)} · SIDE A · 33⅓ RPM · STEREO · ${catalogNo(index)} · SIDE A ·`;
     return (
         <div className={`vinyl absolute inset-0 ${lit ? "vinyl-lit" : ""}`}>
             {/* Dönen kısım: oluklar + etiket */}
@@ -47,9 +51,9 @@ function Vinyl({ index, title, spinning = false, playing, lit = false }: { index
                             <path id={ringId} d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0" />
                         </defs>
                         <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(0,0,0,0.25)" strokeWidth="0.6" />
-                        <text fill="rgba(20,12,4,0.75)" fontSize="6" letterSpacing="1.6" style={{ fontFamily: "var(--font-jetbrains), monospace" }}>
-                            <textPath href={`#${ringId}`}>
-                                {`${catalogNo(index)} · SIDE A · 33⅓ RPM · STEREO · ${catalogNo(index)} · SIDE A ·`}
+                        <text fill={caption ? "rgba(20,12,4,0.9)" : "rgba(20,12,4,0.75)"} fontSize={caption ? 9 : 6} letterSpacing="1.6" style={{ fontFamily: caption ? "var(--font-instrument), serif" : "var(--font-jetbrains), monospace" }}>
+                            <textPath href={`#${ringId}`} {...(caption ? { textLength: 244, lengthAdjust: "spacing" } : {})}>
+                                {ringText}
                             </textPath>
                         </text>
                         <text x="50" y="40" textAnchor="middle" fill="rgba(20,12,4,0.85)" fontSize="11" style={{ fontFamily: "var(--font-instrument), serif" }}>
@@ -488,9 +492,9 @@ function RecordModal({ index, onClose, onNavigate }: { index: number; onClose: (
                 <div className="min-h-full container mx-auto px-5 md:px-10 pt-24 pb-16 lg:pt-20 lg:pb-10 grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-12 lg:gap-16 items-center pointer-events-none [&>*]:pointer-events-auto">
                     {/* Sol: kılıf + dışarı çıkan plak */}
                     <div className="w-full">
-                    <div className="relative w-[62%] lg:w-[64%] max-w-[480px] lg:max-w-[min(480px,62vh)] aspect-square mx-auto lg:mx-0" style={{ ["--disc-out" as string]: "52%" }}>
+                    <div className="relative w-[62%] lg:w-[64%] max-w-[480px] lg:max-w-[min(480px,62vh)] aspect-square mx-auto lg:mx-0" style={{ ["--disc-out" as string]: "42%" }}>
                         <div className="modal-disc absolute top-[2%] left-[2%] w-[96%] h-[96%]">
-                            <Vinyl index={index} title={project.title[language]} spinning />
+                            <Vinyl index={index} title={project.title[language]} spinning caption />
                         </div>
                         <div className="modal-sleeve absolute inset-0">
                             <Sleeve project={project} index={index} language={language} active mono />

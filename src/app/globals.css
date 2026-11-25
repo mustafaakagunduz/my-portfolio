@@ -261,7 +261,7 @@
 }
 
 @keyframes vinyl-spin { to { transform: rotate(360deg); } }
-.vinyl-spin { animation: vinyl-spin 2.4s linear infinite; }
+.vinyl-spin { animation: vinyl-spin 7s linear infinite; }
 .vinyl-spin-slow { animation: vinyl-spin 6s linear infinite; }
 
 /* Kasa açılış animasyonu */
