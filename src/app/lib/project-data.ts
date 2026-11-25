@@ -39,7 +39,7 @@ export const projects: Project[] = [
         },
         technologies: ["React Three Fiber", "Three.js", "React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Socket.IO", "React Native"],
         imageUrl: "/projects/virtual-exhibition-art/vea-1.webp",
-        images: ["/projects/virtual-exhibition-art/vea-1.webp", "/projects/virtual-exhibition-art/vea-2.webp", "/projects/virtual-exhibition-art/vea-3.webp", "/projects/virtual-exhibition-art/vea-4.webp"],
+        images: ["/projects/virtual-exhibition-art/vea-1.webp", "/projects/virtual-exhibition-art/vea-2.webp", "/projects/virtual-exhibition-art/vea-3.webp"],
         demoUrl: "https://virtualexhibitionart.com",
     },
     {
