@@ -241,12 +241,12 @@ export function RecordCrate() {
 
                 {/* Başlık + okuma paneli */}
                 <div className="mt-6 md:mt-8 grid grid-cols-1 lg:grid-cols-[max-content_12px_minmax(0,46rem)] lg:justify-center items-center gap-6 lg:gap-12">
-                    <h1 className="w-max font-serif leading-[0.85] tracking-[-0.02em]" style={{ fontSize: "clamp(3.6rem, 7vw, 8.5rem)" }}>
+                    <h1 className="w-max font-display leading-[0.85] tracking-[-0.02em]" style={{ fontSize: "clamp(2.6rem, 5.4vw, 6.5rem)" }}>
                         <span className="sr-only">{t["hero.name"]} — </span>
-                        <span className="inline-block overflow-hidden align-bottom pb-[0.25em] -mb-[0.17em]">
+                        <span className="inline-block overflow-hidden align-bottom pt-[0.15em] -mt-[0.15em] pb-[0.3em] -mb-[0.22em] pr-[0.06em] -mr-[0.06em]">
                             <span className="inline-block rise" style={{ animationDelay: "0.1s" }}>{t["crate.pick"]}</span>
                         </span>{" "}
-                        <span className="inline-block overflow-hidden align-bottom pb-[0.25em] -mb-[0.17em]">
+                        <span className="inline-block overflow-hidden align-bottom pt-[0.15em] -mt-[0.15em] pb-[0.3em] -mb-[0.22em] pr-[0.06em] -mr-[0.06em]">
                             <span className="inline-block rise italic text-primary" style={{ animationDelay: "0.2s" }}>{t["crate.record"]}</span>
                         </span>
                     </h1>

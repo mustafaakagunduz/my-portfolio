@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Çalma listesi. Yeni şarkı: mp3'ü public/ klasörüne koy, buraya bir satır ekle.
+ * start (isteğe bağlı): şarkının başlayacağı saniye.
  */
-const TRACKS = [
+const TRACKS: { src: string; artist: string; title: string; start?: number }[] = [
+    { src: "/sezen-aksu-bir-zamanlar-deli-gonlum.mp3", artist: "Sezen Aksu", title: "Bir Zamanlar Deli Gönlüm", start: 23 },
     { src: "/erkin-koray-seni-her-gordugumde.mp3", artist: "Erkin Koray", title: "Seni Her Gördüğümde" },
     { src: "/cem-karaca-resimdeki-gozyaslari.mp3", artist: "Cem Karaca", title: "Resimdeki Gözyaşları" },
     { src: "/baris-manco-kol-dugmeleri.mp3", artist: "Barış Manço", title: "Kol Düğmeleri" },
@@ -47,6 +49,7 @@ export function NowPlaying() {
     }, []);
     const [duration, setDuration] = useState(0);
     const track = TRACKS[index];
+    const startAt = track.start ?? 0;
 
     const fadeTo = (target: number, ms: number, done?: () => void) => {
         const audio = audioRef.current;
@@ -156,8 +159,8 @@ export function NowPlaying() {
     const skip = (dir: 1 | -1) => {
         const audio = audioRef.current;
         // "Önceki": şarkının ortasındaysak başa sar, başındaysak bir öncekine geç
-        if (dir === -1 && audio && audio.currentTime > 3) {
-            audio.currentTime = 0;
+        if (dir === -1 && audio && audio.currentTime > startAt + 3) {
+            audio.currentTime = startAt;
             return;
         }
         autoPlayNext.current = playing;
@@ -169,7 +172,8 @@ export function NowPlaying() {
 
     return (
         <div data-music-toggle className="group/np inline-flex items-center gap-1 rounded-full bg-foreground/[0.08] ring-1 ring-foreground/10 dark:bg-foreground/[0.1] dark:ring-foreground/15 px-1.5 py-1">
-            <audio ref={audioRef} src={track.src} preload="auto" />
+            {/* #t= medya parçası: tarayıcı şarkıyı o saniyeden başlatır */}
+            <audio ref={audioRef} src={startAt ? `${track.src}#t=${startAt}` : track.src} preload="auto" />
 
             <button type="button" onClick={() => skip(-1)} aria-label="Previous track" className={iconBtn}>
                 <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { instrumentSans, instrumentSerif, jetbrainsMono } from "@/app/fonts/fonts";
+import { brygada, instrumentSans, instrumentSerif, jetbrainsMono } from "@/app/fonts/fonts";
 import { ClientProviders } from "@/app/components/ClientProviders";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
+        <html lang="en" suppressHydrationWarning className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${brygada.variable}`}>
         <head>
             <script
                 dangerouslySetInnerHTML={{

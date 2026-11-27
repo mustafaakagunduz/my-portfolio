@@ -1,4 +1,4 @@
-import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import { Brygada_1918, Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 
 // Gövde metinleri: Instrument Serif'in grotesk kardeşi
 export const instrumentSans = Instrument_Sans({
@@ -15,6 +15,15 @@ export const instrumentSerif = Instrument_Serif({
     display: 'swap',
     variable: '--font-instrument',
     weight: '400',
+    style: ['normal', 'italic'],
+    fallback: ['Georgia', 'serif'],
+});
+
+// Ana sayfa başlığı: 1918 Polonya baskı geleneğinden klasik serif
+export const brygada = Brygada_1918({
+    subsets: ['latin', 'latin-ext'],
+    display: 'swap',
+    variable: '--font-brygada',
     style: ['normal', 'italic'],
     fallback: ['Georgia', 'serif'],
 });
